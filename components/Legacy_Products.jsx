@@ -6,7 +6,8 @@ import { Button } from "@nextui-org/button";
 import { legacyProducts } from "@/libs/data";
 
 export const Legacy_Products = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const isWidth = typeof window !== "undefined" && window.innerWidth
+  const [width, setWidth] = useState(isWidth);
   const [count, setCount] = useState(3);
 
   useEffect(() => {
