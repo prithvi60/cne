@@ -5,7 +5,7 @@ import { Evolution } from "@/components/Evolution";
 import Footer from "@/components/Footer";
 import { Global } from "@/components/Global";
 import { Hero } from "@/components/Hero";
-import { Legacy } from "@/components/Legacy";
+import Legacy from "@/components/Legacy";
 import { Legacy_Products } from "@/components/Legacy_Products";
 import Navbar_Component from "@/components/Navbar_Component";
 import Newsletter from "@/components/Newsletter";
