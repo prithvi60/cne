@@ -1,12 +1,9 @@
 import { Plus_Jakarta_Sans, Prata } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./Providers";
-import Navbar_Component from "@/components/Navbar_Component";
-import Footer from "@/components/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Suspense } from "react";
-import LoadingComponent from "@/components/LoadingComponent";
+
 
 const prata = Prata({
   subsets: ["latin"],
@@ -21,8 +18,8 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "CNE Website",
-  description: "CNE Website",
+  title: "Chinni Nambi",
+  description: "Chinni Nambi Enterprises",
 };
 
 export default function RootLayout({ children }) {
