@@ -1,11 +1,12 @@
-'use client'
+"use client";
 
-import { NextUIProvider } from "@nextui-org/system"
+import { NextUIProvider } from "@nextui-org/system";
+import { ParallaxProvider } from "react-scroll-parallax";
 
-export function Providers({children}) {
+export function Providers({ children }) {
   return (
     <NextUIProvider>
-      {children}
+      <ParallaxProvider>{children}</ParallaxProvider>
     </NextUIProvider>
-  )
+  );
 }

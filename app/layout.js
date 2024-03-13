@@ -5,6 +5,8 @@ import Navbar_Component from "@/components/Navbar_Component";
 import Footer from "@/components/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Suspense } from "react";
+import LoadingComponent from "@/components/LoadingComponent";
 
 const prata = Prata({
   subsets: ["latin"],
@@ -27,11 +29,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${prata.variable} ${plus_Jakarta_Sans.variable}`}>
-        <Providers>
-          <Navbar_Component />
-          {children}
-          <Footer />
-        </Providers>
+          <Providers>
+            {/* <Navbar_Component /> */}
+            {children}
+            {/* <Footer /> */}
+          </Providers>
       </body>
     </html>
   );

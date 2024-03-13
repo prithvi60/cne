@@ -12,24 +12,39 @@ import {
 import { Link } from "react-scroll";
 import { NavLink } from "@/libs/data";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Navbar_Component = () => {
+  const variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+  };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <Navbar
-    position="static"
+      position="static"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
-        base: "max-w-[1440px] mx-auto",
+        base: "max-w-[1440px] mx-auto mb-5",
         wrapper:
           "flex flex-row justify-between items-center md:flex-col md:gap-2 !h-auto",
         item: ["data-[active=true]:text-primary"],
       }}
     >
       <NavbarContent>
-        <NavbarBrand>
+        <NavbarBrand
+          as={motion.div}
+          variants={variants}
+          initial="initial"
+          whileInView="animate"
+          transition={{ duration: 1, delay: 0.25 }}
+        >
           <div className="relative w-20 h-20 md:w-32 md:h-32">
             <Image
               src={"/logo.svg"}
@@ -42,11 +57,19 @@ const Navbar_Component = () => {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent
-        className="hidden text-lg md:gap-16 lg:gap-24 md:flex font-Prata md:text-xl"
+        as={motion.div}
+        variants={variants}
+        initial="initial"
+        whileInView="animate"
+        transition={{ duration: 1, delay: 0.25 }}
+        className="hidden md:gap-20 lg:gap-28 xl:gap-40 md:flex font-Prata "
         justify="center"
       >
         {NavLink.map((i, idx) => (
-          <NavbarItem key={idx} className="hover:text-primary">
+          <NavbarItem
+            key={idx}
+            className="text-lg hover:text-primary md:text-xl xl:text-2xl"
+          >
             <Link
               to={`${i}`}
               href={`${i}`}
@@ -65,7 +88,7 @@ const Navbar_Component = () => {
       <NavbarContent justify="end">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="h-auto md:hidden"
+          className="p-4 md:hidden"
         />
       </NavbarContent>
       <NavbarMenu className="pt-5 bg-primary bg-opacity-60">

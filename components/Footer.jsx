@@ -1,9 +1,11 @@
+// "use client"
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
+  
   return (
     <footer>
       <div className="flex items-center justify-center w-full h-full gap-12 mb-3 text-black md:hidden">

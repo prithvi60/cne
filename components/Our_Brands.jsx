@@ -41,7 +41,7 @@ export const Our_Brands = () => {
             </div>
           ))}
         </div>
-        <div className="absolute z-0 top-2 -left-64 w-[23rem] h-[23rem] md:w-[30rem] md:h-[30rem] md:top-10 md:-left-[18rem] lg:w-[40rem] lg:h-[40rem] lg:-left-72 xl:-left-52 2xl:left-0">
+        <div className="absolute z-0 top-2 -left-64 w-[23rem] h-[23rem] md:w-[30rem] md:h-[30rem] md:top-10 md:-left-[18rem] lg:w-[40rem] lg:h-[40rem] lg:-left-72 xl:-left-52 2xl:left-0 animate-pulse">
           <Image
             fill
             src={"/brand bg 1.svg"}
@@ -51,7 +51,7 @@ export const Our_Brands = () => {
         </div>
         <div
           className="absolute top-24 md:left-[14rem]
-        lg:left-[28rem] 2xl:left-[42rem] z-0 left-40 h-12 w-12 md:w-[8rem] md:h-[8rem]"
+        lg:left-[28rem] 2xl:left-[42rem] z-0 left-40 h-12 w-12 md:w-[8rem] md:h-[8rem] animate-pulse"
         >
           <Image
             fill
@@ -60,7 +60,7 @@ export const Our_Brands = () => {
             className="object-contain"
           />
         </div>
-        <div className="absolute hidden w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48">
+        <div className="absolute hidden w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48 animate-pulse">
           <Image
             fill
             src={"/brand bg 5.svg"}
