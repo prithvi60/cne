@@ -80,7 +80,7 @@ export const Hero = () => {
               className="object-cover scale-90 lg:scale-95 2xl:scale-100"
             />
           </div>
-          <div className="md:block lg:hidden absolute top-10 -left-5 md:left-0 w-full h-[650px]">
+          <div className="hidden md:block lg:hidden absolute top-10 -left-5 md:left-0 w-full h-[650px]">
             <Image
               src={"/parallaxstyleMd.png"}
               fill

@@ -50,7 +50,7 @@ const Navbar_Component = () => {
               src={"/logo.svg"}
               alt="Logo"
               fill
-              className="mt-3.5 md:mt-0"
+              className="mt-3.5 md:mt-0 hover:animate-appearance-in cursor-pointer"
               priority
             />
           </div>
@@ -68,7 +68,7 @@ const Navbar_Component = () => {
         {NavLink.map((i, idx) => (
           <NavbarItem
             key={idx}
-            className="text-lg hover:text-primary md:text-xl xl:text-2xl"
+            className="text-lg hover:text-primary md:text-xl xl:text-2xl hover:animate-appearance-in"
           >
             <Link
               to={`${i}`}
@@ -91,11 +91,16 @@ const Navbar_Component = () => {
           className="p-4 md:hidden"
         />
       </NavbarContent>
-      <NavbarMenu className="pt-5 bg-primary bg-opacity-60">
+      <NavbarMenu className="pt-5 mt-8 bg-primary bg-opacity-60">
         {NavLink.map((item, index) => (
           <NavbarMenuItem
+            as={motion.div}
+            variants={variants}
+            initial="initial"
+            whileInView="animate"
+            transition={{ duration: 2, delay: 1 }}
             key={index}
-            className="mt-5 text-lg font-semibold text-white font-Plus_Jakarta_Sans"
+            className="mt-5 text-lg font-semibold text-white font-Plus_Jakarta_Sans hover:animate-appearance-in"
           >
             <Link
               to={item}
