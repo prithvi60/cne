@@ -7,7 +7,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     // "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@nextui-org/theme/dist/components/(button|navbar|tabs|tab|input).js",
+    "./node_modules/@nextui-org/theme/dist/components/(button|navbar|tabs|tab|input|spinner).js",
   ],
   theme: {
     screens: {

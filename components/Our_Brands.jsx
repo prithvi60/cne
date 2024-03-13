@@ -2,32 +2,73 @@
 import { brands } from "@/libs/data";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 export const Our_Brands = () => {
+  const variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+  };
   return (
-    <section
-      id={"Brands"}
-      className="relative space-y-16 wrapper">
-        <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">Our Brands</h1>
-      <div className="z-auto flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-12 sm:flex-row sm:justify-around sm:flex-wrap">
-        {brands.map((list, index) => (
-          <div
-            className="relative overflow-hidden transition-all ease-linear transform rounded-md shadow-xl w-36 h-28 md:h-44 md:w-48 lg:h-[250px] lg:w-[350px] hover:shadow-primary z-20 bg-white"
-            key={index}
-          >
-            <Image
-              fill
-              src={list.img}
-              alt={list.alt}
-              className="object-contain p-6 transition-all ease-linear transform md:p-8 lg:p-10 hover:scale-105"
-            />
-          </div>
-        ))}
-      </div>
-      <div className="absolute top-64 w-full h-full -left-[38rem] z-0">
-      <Image fill src={"/brand bg 1.svg"} alt="svg image" className="object-contain" />
-      </div>
-      {/* <Image width={350} height={350} src={"/brand bg 1.svg"} alt="svg image" className="absolute left-0 object-contain -z-40 top-64" /> */}
+    <section className="relative w-full h-full">
+      <motion.div
+        id={"Brands"}
+        variants={variants}
+        initial="initial"
+        whileInView="animate"
+        transition={{ duration: 1, delay: 0.25 }}
+        className="space-y-16 wrapper"
+      >
+        <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">
+          Our Brands
+        </h1>
+        <div className="z-auto flex flex-col items-center justify-center gap-2 sm:flex-row sm:justify-around sm:flex-wrap">
+          {brands.map((list, index) => (
+            <div
+              className="relative overflow-hidden transition-all ease-linear transform rounded-md shadow-xl w-36 h-28 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px] hover:shadow-primary z-20 bg-white"
+              key={index}
+            >
+              <Image
+                fill
+                src={list.img}
+                alt={list.alt}
+                className="object-contain p-6 transition-all ease-linear transform md:p-4 lg:p-10 hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="absolute z-0 top-2 -left-64 w-[23rem] h-[23rem] md:w-[30rem] md:h-[30rem] md:top-10 md:-left-[18rem] lg:w-[40rem] lg:h-[40rem] lg:-left-72 xl:-left-52 2xl:left-0">
+          <Image
+            fill
+            src={"/brand bg 1.svg"}
+            alt="svg image"
+            className="object-contain"
+          />
+        </div>
+        <div
+          className="absolute top-24 md:left-[14rem]
+        lg:left-[28rem] 2xl:left-[42rem] z-0 left-40 h-12 w-12 md:w-[8rem] md:h-[8rem]"
+        >
+          <Image
+            fill
+            src={"/brand bg 3.svg"}
+            alt="svg image"
+            className="object-contain"
+          />
+        </div>
+        <div className="absolute hidden w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48">
+          <Image
+            fill
+            src={"/brand bg 5.svg"}
+            alt="svg image"
+            className="object-contain"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 };
