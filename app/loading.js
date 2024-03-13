@@ -13,7 +13,7 @@ const loading = () => {
               priority
             />
           </div>
-          <h3 className="text-base font-semibold tracking-wider font-Prata md:text-4xl text-primary"><span className="px-3 animate-pulse md:px-8">Loading...</span></h3>
+          {/* <h3 className="text-base font-semibold tracking-wider font-Prata md:text-4xl text-primary"><span className="px-3 animate-pulse md:px-8">Loading...</span></h3> */}
     </div>
   );
 };
