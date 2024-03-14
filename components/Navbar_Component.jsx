@@ -31,9 +31,9 @@ const Navbar_Component = () => {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       classNames={{
-        base: "max-w-[1440px] mx-auto mb-5",
+        base: "max-w-[1440px] mx-auto mb-2.5",
         wrapper:
-          "flex flex-row justify-between items-center md:flex-col md:gap-2 !h-auto",
+          "flex flex-row justify-between items-center md:flex-col md:gap-1.5 !h-auto",
         item: ["data-[active=true]:text-primary"],
       }}
     >
@@ -45,7 +45,7 @@ const Navbar_Component = () => {
           whileInView="animate"
           transition={{ duration: 1, delay: 0.25 }}
         >
-          <div className="relative w-20 h-20 md:w-32 md:h-32">
+          <div className="relative w-20 h-20 md:w-28 md:h-28">
             <Image
               src={"/logo.svg"}
               alt="Logo"
@@ -68,7 +68,7 @@ const Navbar_Component = () => {
         {NavLink.map((i, idx) => (
           <NavbarItem
             key={idx}
-            className="text-lg hover:text-primary md:text-xl xl:text-2xl hover:animate-appearance-in"
+            className="text-lg hover:text-primary xl:text-[23px] hover:animate-appearance-in"
           >
             <Link
               to={`${i}`}
@@ -91,7 +91,7 @@ const Navbar_Component = () => {
           className="p-4 md:hidden"
         />
       </NavbarContent>
-      <NavbarMenu className="pt-5 mt-8 bg-primary bg-opacity-60">
+      <NavbarMenu className="pt-5 mt-6 text-center bg-primary bg-opacity-60">
         {NavLink.map((item, index) => (
           <NavbarMenuItem
             as={motion.div}

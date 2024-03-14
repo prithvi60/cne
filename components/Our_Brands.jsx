@@ -26,10 +26,10 @@ export const Our_Brands = () => {
         <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">
           Our Brands
         </h1>
-        <div className="z-auto flex flex-col items-center justify-center gap-2 sm:flex-row sm:justify-around sm:flex-wrap">
+        <div className="z-auto flex flex-col items-center justify-center gap-5 sm:gap-2 sm:flex-row sm:justify-around sm:flex-wrap">
           {brands.map((list, index) => (
             <div
-              className="relative overflow-hidden transition-all ease-linear transform rounded-md shadow-xl w-36 h-28 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px] hover:shadow-primary z-20 bg-white"
+              className="relative overflow-hidden transition-all ease-linear transform rounded-md shadow-xl w-full h-44 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px] hover:shadow-primary z-20 bg-white"
               key={index}
             >
               <Image

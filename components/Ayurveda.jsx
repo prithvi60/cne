@@ -70,7 +70,7 @@ export const Ayurveda = () => {
           ))}
         </div>
 
-        <div className="block absolute bottom-64 h-20 w-20 md:bottom-44 lg:top-[26rem] right-0 -z-10 md:w-24 md:h-24 lg:w-[8rem] lg:h-[8rem] xl:w-[11rem] xl:h-[11rem] xl:top-40 xl:right-2 2xl:top-[15rem] 2xl:right-10  animate-pulse">
+        <div className="block absolute bottom-96 h-20 w-20 md:bottom-44 lg:top-[26rem] -right-2 -z-10 md:w-24 md:h-24 lg:w-[8rem] lg:h-[8rem] xl:w-[11rem] xl:h-[11rem] xl:top-40 xl:right-2 2xl:top-[15rem] 2xl:right-10  animate-pulse">
           <Image
             fill
             src={"/Ayurveda bg 2.svg"}

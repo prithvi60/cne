@@ -73,7 +73,7 @@ export const AyurvedaBanner = () => {
           className="object-contain"
         />
       </div>
-      <div className="block absolute -bottom-28 right-0 w-[8rem] h-[8rem] animate-pulse -z-10 md:h-[14rem] md:w-[14rem] md:-bottom-36 xl:h-[20rem] xl:w-[20rem] xl:-bottom-[14rem] 2xl:-bottom-[15rem]">
+      <div className="block absolute -bottom-[6.5rem] right-0 w-[9rem] h-[9rem] animate-pulse -z-10 md:h-[14rem] md:w-[14rem] md:-bottom-36 xl:h-[20rem] xl:w-[20rem] xl:-bottom-[14rem] 2xl:-bottom-[15rem]">
         <Image
           fill
           src={"/Ayurveda bg 4.svg"}
