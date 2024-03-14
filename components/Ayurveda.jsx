@@ -78,7 +78,7 @@ export const Ayurveda = () => {
             className="object-contain"
           />
         </div>
-        <div className="block absolute -bottom-24 md:-bottom-28 xl:-bottom-24 left-0 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] xl:w-[18rem] xl:h-[18rem] animate-pulse -z-10">
+        <div className="block absolute -bottom-24 md:-bottom-28 2xl:-bottom-24 left-0 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] xl:w-[18rem] xl:h-[18rem] animate-pulse -z-10">
           <Image
             fill
             src={"/Ayurveda bg 3.svg"}

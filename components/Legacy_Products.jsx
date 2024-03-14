@@ -67,6 +67,7 @@ export const Legacy_Products = () => {
               base: "!overflow-hidden w-full h-full justify-center items-center",
               tabList: "!overflow-scroll font-Prata font-semibold",
               tabContent: "group-data-[selected=true]:font-bold",
+              panel : "w-full"
             }}
             variant="underlined"
             color="primary"

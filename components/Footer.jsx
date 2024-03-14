@@ -26,7 +26,7 @@ const Footer = () => {
       <section className="w-full h-full bg-primary">
         <div className="py-5 px-12 max-w-[1440px] h-full mx-auto">
           <div className="flex flex-row items-center justify-center md:justify-between ">
-            <p className="mt-2 text-xs font-medium tracking-wider text-white uppercase font-Plus_Jakarta_Sans">{`© ${currentYear}  Chinni Nambi Enterprises. All rights reserved.`}</p>
+            <p className="mt-2 text-xs font-medium tracking-wider text-center text-white uppercase md:text-left font-Plus_Jakarta_Sans">{`© ${currentYear}  Chinni Nambi Enterprises. All rights reserved.`}</p>
             <div className="items-center hidden gap-8 text-white md:flex">
               <Link href={"#"}>
                 <FaFacebookF className="text-lg hover:animate-appearance-in" />

@@ -60,7 +60,7 @@ const Newsletter = () => {
                 src={"/evolution.png"}
                 fill
                 alt="product Image"
-                className="object-cover transition-all ease-in-out transform group-hover:scale-105"
+                className="object-cover transition-all ease-in-out transform cursor-pointer group-hover:scale-105"
               />
             </div>
             <div className="block absolute -bottom-14 md:-bottom-20 left-0 -z-10 w-[7rem] h-[7rem] md:w-[10rem] md:h-[10rem] animate-pulse">

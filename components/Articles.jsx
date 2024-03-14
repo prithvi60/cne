@@ -91,9 +91,8 @@ export const Articles = () => {
         <div className="w-full h-full text-center">
           <Button
             variant="ghost"
-            radius="md"
             color="primary"
-            className="!text-[#7D7D7D] font-Plus_Jakarta_Sans uppercase tracking-[0.3em] md:tracking-[0.5em] py-4 px-8 text-sm md:text-lg lg:text-xl hover:!text-white font-medium"
+            className="!text-[#7D7D7D] font-Plus_Jakarta_Sans uppercase tracking-[0.3em] md:tracking-[0.5em] py-6 px-8 text-sm md:text-lg lg:text-xl hover:!text-white font-medium"
           >
             read all articles
           </Button>
