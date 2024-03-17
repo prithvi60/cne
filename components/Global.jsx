@@ -23,13 +23,13 @@ export const Global = () => {
         className=" wrapper" id={"Global"}>
         <div className="z-20 flex flex-col items-start gap-5 mb-6 bg-white md:flex-row md:items-start">
           <div className="w-full md:w-1/2">
-            <div className="relative w-full overflow-hidden h-80 lg:h-[500px] group">
+            <div className="relative w-full overflow-hidden h-80 lg:h-[500px] group z-10">
               <Image
                 src={"/Mask 1.png"}
                 alt="image"
                 fill
                 className={
-                  "object-contain md:p-2.5 group-hover:scale-105 transition-all ease-in-out transform"
+                  "object-contain group-hover:scale-105 transition-all ease-in-out transform cursor-pointer"
                 }
               />
             </div>
