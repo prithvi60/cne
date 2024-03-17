@@ -27,11 +27,11 @@ const Navbar_Component = () => {
 
   return (
     <Navbar
-      position="static"
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      variant="sticky"
       classNames={{
-        base: "max-w-[1440px] mx-auto mb-5",
+        base: "w-screen mb-5",
         wrapper:
           "flex flex-row justify-between items-center md:flex-col md:gap-2 !h-auto",
         item: ["data-[active=true]:text-primary"],
