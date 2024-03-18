@@ -4,17 +4,8 @@ import { Tabs, Tab } from "@nextui-org/tabs";
 import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { legacyProducts } from "@/libs/data";
-import { motion } from "framer-motion";
 
 export const Legacy_Products = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
   const isWidth = typeof window !== "undefined" && window.innerWidth;
   const [width, setWidth] = useState(isWidth);
   const [count, setCount] = useState(3);
@@ -41,13 +32,7 @@ export const Legacy_Products = () => {
   }, [width]);
   return (
     <section className="relative w-full h-full my-10">
-      <motion.div
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25, staggerChildren: 0.5 }}
-        className="space-y-8 wrapper md:space-y-12"
-      >
+      <div className="space-y-8 wrapper md:space-y-12">
         <div className="relative ">
           <h1 className="text-center text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
             Legacy Products
@@ -67,7 +52,7 @@ export const Legacy_Products = () => {
               base: "!overflow-hidden w-full h-full justify-center items-center",
               tabList: "!overflow-scroll font-Prata font-semibold",
               tabContent: "group-data-[selected=true]:font-bold",
-              panel : "w-full"
+              panel: "w-full",
             }}
             variant="underlined"
             color="primary"
@@ -114,7 +99,7 @@ export const Legacy_Products = () => {
             ))}
           </Tabs>
         </div>
-      </motion.div>
+      </div>
       <div className="hidden lg:block absolute top-[30rem] right-0 -z-10 w-[7rem] h-[7rem] animate-pulse">
         <Image
           fill

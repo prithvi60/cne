@@ -12,39 +12,60 @@ import {
 import { Link } from "react-scroll";
 import { NavLink } from "@/libs/data";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const Navbar_Component = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("Home");
 
+  const handleMenuBar = (item) => {
+    setIsMenuOpen(false);
+    setActiveItem(item);
+  };
   return (
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       variant="sticky"
       classNames={{
-        base: "w-screen mb-5",
+        base: "w-full mb-4 pb-4",
         wrapper:
-          "flex flex-row justify-between items-center md:flex-col md:gap-1.5 !h-auto",
-        item: ["data-[active=true]:text-primary"],
+          "flex flex-row justify-between items-center md:flex-col md:gap-1.5 !h-auto ",
+        item: [
+          "flex",
+          "relative",
+          "h-full",
+          "items-center",
+          //  "data-[active=true]: text-primary",
+          "data-[active=true]:after:content-['']",
+          "data-[active=true]:after:absolute",
+          "data-[active=true]:after:-bottom-2",
+          "data-[active=true]:after:left-0",
+          "data-[active=true]:after:right-0",
+          "data-[active=true]:after:h-[3px]",
+          "data-[active=true]:after:rounded-[2px]",
+          "data-[active=true]:after:bg-primary",
+        ],
+        menuItem: [
+          "flex",
+          "relative",
+          "h-full",
+          "items-center",
+          //  " data-[active=true]: text-primary",
+          "data-[active=true]:after:content-['']",
+          "data-[active=true]:after:absolute",
+          "data-[active=true]:after:bottom-3",
+          "data-[active=true]:after:left-0",
+          "data-[active=true]:after:right-0",
+          "data-[active=true]:after:h-[3px]",
+          "data-[active=true]:after:w-[5rem]",
+          "data-[active=true]:after:mx-auto",
+          "data-[active=true]:after:rounded-[2px]",
+          "data-[active=true]:after:bg-primary",
+        ],
       }}
     >
       <NavbarContent>
-        <NavbarBrand
-          as={motion.div}
-          variants={variants}
-          initial="initial"
-          whileInView="animate"
-          transition={{ duration: 1, delay: 0.25 }}
-        >
+        <NavbarBrand>
           <div className="relative w-20 h-20 md:w-28 md:h-28">
             <Image
               src={"/logo.svg"}
@@ -57,28 +78,25 @@ const Navbar_Component = () => {
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent
-        as={motion.div}
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25 }}
-        className="hidden md:gap-20 lg:gap-28 xl:gap-40 md:flex font-Prata "
+        className="hidden md:gap-12 lg:gap-24 xl:gap-32 md:flex font-Prata "
         justify="center"
       >
         {NavLink.map((i, idx) => (
           <NavbarItem
             key={idx}
-            className="text-lg hover:text-primary xl:text-[23px] hover:animate-appearance-in"
+            className={"text-lg xl:text-[23px] hover:animate-appearance-in"}
+            isActive={activeItem === i}
           >
             <Link
               to={`${i}`}
               href={`${i}`}
               title={i}
               spy={true}
-              offset={0}
+              offset={-160}
               smooth={true}
               duration={500}
               aria-current="page"
+              onClick={() => setActiveItem(i)}
             >
               {i}
             </Link>
@@ -91,28 +109,24 @@ const Navbar_Component = () => {
           className="p-4 md:hidden"
         />
       </NavbarContent>
-      <NavbarMenu className="pt-5 mt-6 text-center bg-primary bg-opacity-60">
+      <NavbarMenu className="mt-4 text-center bg-white bg-opacity-85">
         {NavLink.map((item, index) => (
           <NavbarMenuItem
-            as={motion.div}
-            variants={variants}
-            initial="initial"
-            whileInView="animate"
-            transition={{ duration: 2, delay: 1 }}
             key={index}
-            className="mt-5 text-lg font-semibold text-white font-Plus_Jakarta_Sans hover:animate-appearance-in"
+            className="h-16 text-lg font-semibold font-Plus_Jakarta_Sans hover:animate-appearance-in"
+            isActive={activeItem === item}
           >
             <Link
               to={item}
               href={item}
               title={item}
               spy={true}
-              offset={0}
+              offset={-100}
               smooth={true}
               duration={500}
               className="w-full"
               size="lg"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => handleMenuBar(item)}
             >
               {item}
             </Link>

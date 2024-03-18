@@ -1,26 +1,26 @@
-"use client";
 import { brands } from "@/libs/data";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export const Our_Brands = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
+  // const variants = {
+  //   initial: {
+  //     opacity: 0,
+  //   },
+  //   animate: {
+  //     opacity: 1,
+  //   },
+  // };
   return (
     <section className="relative w-full h-full">
-      <motion.div
+      <div
         id={"Brands"}
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25 }}
+        // variants={variants}
+        // initial="initial"
+        // whileInView="animate"
+        // transition={{ duration: 1, delay: 0.25 }}
         className="space-y-16 wrapper"
       >
         <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">
@@ -28,17 +28,19 @@ export const Our_Brands = () => {
         </h1>
         <div className="z-auto flex flex-col items-center justify-center gap-5 sm:gap-2 sm:flex-row sm:justify-around sm:flex-wrap">
           {brands.map((list, index) => (
-            <div
+            <Link
+            href={list.ref}
               className="relative overflow-hidden transition-all ease-linear transform rounded-md shadow-xl w-full h-44 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px] hover:shadow-primary z-20 bg-white"
               key={index}
+              target="_blank"
             >
               <Image
                 fill
                 src={list.img}
                 alt={list.alt}
-                className="object-contain p-6 transition-all ease-linear transform md:p-4 lg:p-10 hover:scale-105"
+                className="object-contain p-6 transition-all ease-linear transform cursor-pointer md:p-4 lg:p-10 hover:scale-105"
               />
-            </div>
+            </Link>
           ))}
         </div>
         <div className="absolute z-0 top-2 -left-64 w-[23rem] h-[23rem] md:w-[30rem] md:h-[30rem] md:top-10 md:-left-[18rem] lg:w-[40rem] lg:h-[40rem] lg:-left-72 xl:-left-52 2xl:left-0 animate-pulse">
@@ -68,7 +70,7 @@ export const Our_Brands = () => {
             className="object-contain"
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

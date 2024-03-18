@@ -2,35 +2,20 @@
 import Image from "next/image";
 import React from "react";
 import ReactPlayer from "react-player/lazy";
-import { motion } from "framer-motion";
 
 export const Evolution = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
   return (
     <section className="relative w-full h-full">
-      <motion.div
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25 }}
-        className="wrapper"
-      >
-        <div className="z-20 flex flex-col items-start gap-4 mb-6 bg-white lg:flex-row lg:items-center">
-          <div className="z-20 w-full mb-5 text-center bg-white lg:text-right space-y-7 lg:w-1/2">
+      <div className="wrapper">
+        <div className="z-20 flex flex-col items-start gap-4 mb-6 bg-white lg:flex-row">
+          <div className="z-20 w-full mb-5 text-center bg-white lg:text-right space-y-7 lg:w-[55%] lg:indent-12 tracking-wide mt-1">
             <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
               Evolution of Products
             </h1>
             <h3 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto">
               Since 1970’s
             </h3>
-            <p className="text-lg font-medium md:text-xl lg:text-2xl font-Plus_Jakarta_Sans text-grey-50">
+            <p className="text-base font-medium md:text-lg lg:text-2xl font-Plus_Jakarta_Sans text-grey-50">
               Ac varius lectus tellus tellus quisque tristique aenean. Volutpat
               velit nulla eu iaculis risus in urna. Eu morbi vel purus velit dui
               vel egestas purus sed. Eget turpis tincidunt faucibus montes arcu
@@ -43,7 +28,7 @@ export const Evolution = () => {
               venenatis integer fringilla.
             </p>
           </div>
-          <div className="relative w-full lg:w-1/2">
+          <div className="relative w-full lg:w-[45%]">
             <div className="relative w-full overflow-hidden h-64 md:h-96 lg:h-[500px] z-20">
               <ReactPlayer
                 width={"100%"}
@@ -70,7 +55,7 @@ export const Evolution = () => {
             className="object-contain"
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

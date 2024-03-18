@@ -1,26 +1,13 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import { ImQuotesRight } from "react-icons/im";
 import { ImQuotesLeft } from "react-icons/im";
-import { motion } from "framer-motion";
 
 export const AyurvedaBanner = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
+
   return (
     <section className="relative w-full h-full">
-      <motion.div
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25 }}
+      <div
         className="z-20 bg-primary"
       >
         <div className="flex flex-col-reverse w-full h-full max-w-full gap-5 my-6 md:gap-10 lg:flex-row wrapper">
@@ -64,7 +51,7 @@ export const AyurvedaBanner = () => {
             </span> */}
           </div>
         </div>
-      </motion.div>
+      </div>
       <div className="block absolute -top-20 right-0 w-[10rem] h-[10rem] animate-pulse -z-10 md:-top-24  xl:-top-[10.5rem] md:h-[12rem] md:w-[12rem] xl:h-[18rem] xl:w-[18rem]">
         <Image
           fill

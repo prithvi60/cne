@@ -4,13 +4,13 @@ export const NavLink = [
   "Brands",
   "Global",
   "Ayurveda",
-  // "Contact",
+  "Contact Us",
 ];
 
 export const brands = [
-  { img: "/NIVARAN Logo.png", alt: "NIVARAN Logo" },
-  { img: "/Velvette logo.png", alt: "Velvette Logo" },
-  { img: "/MEMORY PLUS LOGO.png", alt: "MEMORY PLUS LOGO" },
+  { img: "/NIVARAN Logo.png", alt: "NIVARAN Logo", ref: "https://nivaran90.com" },
+  { img: "/Velvette logo.png", alt: "Velvette Logo", ref: "/" },
+  { img: "/MEMORY PLUS LOGO.png", alt: "MEMORY PLUS LOGO", ref: "https://memoryplus.in/" },
 ];
 
 export const benefits = [
@@ -31,49 +31,77 @@ export const legacyProducts = [
       {
         img: "/product 1.png",
         alt: "products 1",
-        title: "Nivaran 90 Sachet",
+        title: "Velvette ",
         desc: "lorem ipsum text",
       },
       {
         img: "/product 2.png",
         alt: "products 2",
-        title: "Nivaran 90 Sachet",
+        title: "Velvette Protein Plus",
         desc: "lorem ipsum text",
       },
       {
         img: "/product 3.png",
         alt: "products 3",
-        title: "Nivaran 90 Sachet",
+        title: "Velvette Talc",
         desc: "lorem ipsum text",
       },
       {
         img: "/product 4.png",
         alt: "products 4",
-        title: "Nivaran 90 Sachet",
+        title: "Nivaran 90",
         desc: "lorem ipsum text",
       },
       {
         img: "/product 1.png",
         alt: "products 1",
-        title: "Nivaran 90 Sachet",
+        title: "Pain balm and oil  (94)",
         desc: "lorem ipsum text",
       },
       {
         img: "/product 2.png",
         alt: "products 2",
-        title: "Nivaran 90 Sachet",
+        title: "Memory Plus (96) ",
         desc: "lorem ipsum text",
       },
       {
         img: "/product 3.png",
         alt: "products 3",
-        title: "Nivaran 90 Sachet",
+        title: "Memory Vita (2004) ",
         desc: "lorem ipsum text",
       },
       {
         img: "/product 4.png",
         alt: "products 4",
-        title: "Nivaran 90 Sachet",
+        title: "Antacid (2014) ",
+        desc: "lorem ipsum text",
+      },
+      ,
+      {
+        img: "/product 4.png",
+        alt: "products 4",
+        title: "Memory Vita Chocos (2014)",
+        desc: "lorem ipsum text",
+      },
+      ,
+      {
+        img: "/product 4.png",
+        alt: "products 4",
+        title: "Cough cure Granules (2015) ",
+        desc: "lorem ipsum text",
+      },
+      ,
+      {
+        img: "/product 4.png",
+        alt: "products 4",
+        title: "Kabasura (2020)",
+        desc: "lorem ipsum text",
+      },
+      ,
+      {
+        img: "/product 4.png",
+        alt: "products 4",
+        title: "Nilavembu",
         desc: "lorem ipsum text",
       },
     ],

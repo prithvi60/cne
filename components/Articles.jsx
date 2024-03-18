@@ -4,17 +4,8 @@ import { Button } from "@nextui-org/button";
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
-import { motion } from "framer-motion";
 
 export const Articles = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
   let settings = {
     arrows: false,
     dots: false,
@@ -54,12 +45,12 @@ export const Articles = () => {
   };
   return (
     <section className="relative w-full h-full mt-10 md:mb-40">
-      <motion.div  variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25 }}  className="mb-24 space-y-8 wrapper md:space-y-12">
-        <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px] text-center w-full">
-          Read Our Articles
+      <div
+        className="mb-24 space-y-8 wrapper md:space-y-12"
+      >
+        <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px] text-center w-full bg-white">
+          {/* Read Our Articles */}
+          Dive into the world of Ayurveda through our blog
         </h1>
         <div className="bg-white slider-container">
           <Slider {...settings}>
@@ -97,7 +88,7 @@ export const Articles = () => {
             read all articles
           </Button>
         </div>
-      </motion.div>
+      </div>
       <div className="block absolute top-16 md:top-20 lg:top-56 left-0 -z-10 w-[15rem] h-[20rem] lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse">
         <Image
           fill
@@ -106,9 +97,11 @@ export const Articles = () => {
           className="object-contain"
         />
       </div>
-      <div className="block absolute -bottom-28 right-0 w-[10rem] h-[20rem] -z-10
+      <div
+        className="block absolute -bottom-28 right-0 w-[10rem] h-[20rem] -z-10
       md:w-[10rem] md:h-[20rem]
-      lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse">
+      lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse"
+      >
         <Image
           fill
           src={"/Articles bg 2.svg"}

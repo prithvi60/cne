@@ -1,35 +1,18 @@
-"use client";
 import { benefits } from "@/libs/data";
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
 
 export const Ayurveda = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
   return (
     <section className="relative w-full h-full">
-      <motion.div
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25 }}
-        className="space-y-8 wrapper md:space-y-12"
-        id={"Ayurveda"}
-      >
+      <div className="space-y-8 wrapper md:space-y-12" id={"Ayurveda"}>
         <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">
           Ayurveda
         </h1>
         <h3 className="text-2xl md:text-[40px] text-secondary font-Prata text-center capitalize">
           The Science of Well-Being
         </h3>
-        <p className="w-full mx-auto text-base leading-snug tracking-wide text-center capitalize md:text-lg lg:text-xl text-grey-100 lg:w-3/5 font-Plus_Jakarta_Sans">
+        <p className="w-full mx-auto text-base leading-normal tracking-wide text-center capitalize md:text-lg lg:text-xl text-grey-100 lg:w-[70%] font-Plus_Jakarta_Sans md:!leading-[3rem]">
           Ayurveda is a holistic system of medicine that originated in India
           over 5,000 years ago. It is based on the belief that health is the
           balance of the body&apos;s three doshas: Vata, Pitta, & Kapha.
@@ -86,7 +69,7 @@ export const Ayurveda = () => {
             className="object-contain"
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
