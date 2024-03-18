@@ -4,21 +4,6 @@ import React from "react";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 
 export const Hero = () => {
-  const background = {
-    image: "/parallexlayer3.png",
-    translateY: [0, 50],
-    opacity: [1, 0.3],
-    scale: [1.05, 1, "easeOutCubic"],
-    shouldAlwaysCompleteAnimation: true,
-  };
-
-
-  const foreground = {
-    image: "/parallexlayer2.png",
-    translateY: [0, 15],
-    scale: [1, 1.1, "easeOutCubic"],
-    shouldAlwaysCompleteAnimation: true,
-  };
 
   return (
     <section className="w-full h-full" id="Home">

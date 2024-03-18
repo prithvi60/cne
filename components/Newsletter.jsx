@@ -2,24 +2,12 @@
 import React from "react";
 import { Input } from "@nextui-org/input";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const Newsletter = () => {
-  const variants = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-  };
+
   return (
     <section className="relative w-full h-full my-10">
-      <motion.div
-        variants={variants}
-        initial="initial"
-        whileInView="animate"
-        transition={{ duration: 1, delay: 0.25 }}
+      <div
         className="flex flex-col-reverse items-center justify-center gap-5 mx-auto wrapper md:flex-row"
       >
         <div className="relative block w-full space-y-5 md:w-1/2 lg:w-2/5">
@@ -81,7 +69,7 @@ const Newsletter = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
