@@ -26,36 +26,38 @@ const pathVariants = {
 const Legacy = (props) => {
   const [width, setWidth] = React.useState(null);
   const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress,scrollY } = useScroll({
     target: targetRef,
   });
 
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    ["1%", width > 500 ? "-15%" : "-65%"]
+    ["1%", width > 500 ? "-15%" : "-1009erthjkllkjhgfdfghjytresdaz` ` q%"]
   );
   React.useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
+  console.log("scroll div",scrollYProgress,scrollY)
   return (
-    <div ref={targetRef} className="relative h-[300vh] md:h-[300vh]">
-      <div className="sticky top-[100px] md:top-0 h-[500px] md:h-[800px] items-center overflow-hidden">
+    <div ref={targetRef} className="relative">
+      <div className="items-center overflow-x-scroll">
         <section
-          className="relative w-full h-full py-8 mx-auto space-y-8 md:py-12"
+          className="relative w-full h-full  mx-auto space-y-8 md:py-12 "
           id="Legacy"
         >
           <h1 className="text-center text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
             Legacy
           </h1>
           <div
-            className="flex w-[1200px] md:w-full
+            className="flex w-[1200px] md:w-[150vw] 
       
       
       "
+      style={{ x }}
+
           >
             <motion.svg
-              style={{ x }}
               // preserveAspectRatio="none"
               // className={"scale-150"}
               viewBox="0 0 1920 824"
