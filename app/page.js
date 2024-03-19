@@ -13,7 +13,7 @@ import { Our_Brands } from "@/components/Our_Brands";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main>
       <Navbar_Component/>
       <Hero />
       <Legacy />

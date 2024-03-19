@@ -26,7 +26,7 @@ const pathVariants = {
 const Legacy = (props) => {
   const [width, setWidth] = React.useState(null);
   const targetRef = useRef(null);
-  const { scrollYProgress,scrollY } = useScroll({
+  const { scrollYProgress, scrollY } = useScroll({
     target: targetRef,
   });
 
@@ -38,12 +38,12 @@ const Legacy = (props) => {
   React.useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
-  console.log("scroll div",scrollYProgress,scrollY)
+  // console.log("scroll div",scrollYProgress,scrollY)
   return (
     <div ref={targetRef} className="relative">
-      <div className="items-center overflow-x-scroll">
+      <div className="items-center overflow-x-scroll custom">
         <section
-          className="relative w-full h-full  mx-auto space-y-8 md:py-12 "
+          className="relative w-full h-full mx-auto space-y-8 md:py-12 "
           id="Legacy"
         >
           <h1 className="text-center text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
@@ -54,8 +54,7 @@ const Legacy = (props) => {
       
       
       "
-      style={{ x }}
-
+            style={{ x }}
           >
             <motion.svg
               // preserveAspectRatio="none"

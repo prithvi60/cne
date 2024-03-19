@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,13 +14,26 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@layer utilities{
-  .wrapper{
-    @apply px-6 py-8 md:px-10 md:py-12 max-w-[1440px] h-full mx-auto
+@layer utilities {
+  .wrapper {
+    @apply px-6 py-8 md:px-10 md:py-12 max-w-[1440px] h-full mx-auto;
   }
 }
 
 .slick-slide {
-  padding: 0 7px;
+  padding: 0 5px;
 }
 
+.custom::-webkit-scrollbar {
+  height: 10px;
+}
+
+.custom::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom::-webkit-scrollbar-thumb {
+  background: #418b04a9;
+  border-radius: 10px;
+
+}

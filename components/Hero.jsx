@@ -4,27 +4,20 @@ import React from "react";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 
 export const Hero = () => {
-
   return (
     <section className="w-full h-full" id="Home">
       <ParallaxBanner className="h-[800px] lg:h-[950px] xl:h-[1200px] 2xl:h-[1500px] w-auto">
-        <ParallaxBannerLayer
-          className="w-full h-auto"
-          speed={-20}
-        >
-          <div className="block absolute top-52 lg:top-36 w-full h-[640px] lg:h-[850px] xl:h-[1200px] ">
+        <ParallaxBannerLayer className="w-full h-auto" speed={-20}>
+          <div className="block absolute top-48 md:top-52 lg:top-36 w-full h-[640px] lg:h-[850px] xl:h-[1200px] ">
             <Image
-              src={"/parallexlayer3.png"}
+              src={"/parallexlayer.png"}
               fill
               alt="image"
               className="object-cover md:object-center"
             />
           </div>
         </ParallaxBannerLayer>
-        <ParallaxBannerLayer
-          className="relative w-full h-auto"
-          speed={0}
-        >
+        <ParallaxBannerLayer className="relative w-full h-auto" speed={0}>
           <div className="hidden lg:block absolute top-[4.5rem] left-0 w-full md:h-[640px] lg:h-[850px] xl:h-[1200px] ">
             <Image
               src={"/parallaxlg.png"}
@@ -35,7 +28,7 @@ export const Hero = () => {
           </div>
           <div className="hidden md:block lg:hidden absolute top-12 -left-5 md:left-0 w-full h-[650px]">
             <Image
-              src={"/parallaxmd3.png"}
+              src={"/parallaxmd.png"}
               fill
               alt="image"
               className="object-contain scale-125"
@@ -43,7 +36,7 @@ export const Hero = () => {
           </div>
           <div className="block md:hidden absolute top-10 -left-5 md:left-0 w-full h-[650px]">
             <Image
-              src={"/parallaxsm1.png"}
+              src={"/parallaxsm.png"}
               fill
               alt="image"
               className="object-contain scale-125"

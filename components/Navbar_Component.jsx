@@ -25,9 +25,8 @@ const Navbar_Component = () => {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      variant="sticky"
       classNames={{
-        base: "w-full mb-4 pb-4",
+        base: "w-screen mb-4 pb-4 z-50",
         wrapper:
           "flex flex-row justify-between items-center md:flex-col md:gap-1.5 !h-auto ",
         item: [
