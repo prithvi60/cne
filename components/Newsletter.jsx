@@ -1,15 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import { Input } from "@nextui-org/input";
 import Image from "next/image";
 
 const Newsletter = () => {
-
   return (
     <section className="relative w-full h-full my-10">
-      <div
-        className="flex flex-col-reverse items-center justify-center gap-5 mx-auto wrapper md:flex-row"
-      >
+      <div className="flex flex-col-reverse items-center justify-center gap-5 mx-auto wrapper md:flex-row">
         <div className="relative block w-full space-y-5 md:w-1/2 lg:w-2/5">
           <h1 className="hidden md:block text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
             Subscribe to our newsletter
@@ -18,8 +15,9 @@ const Newsletter = () => {
             Send me your email address
           </h3>
           <p className="text-base font-medium md:text-xl lg:text-2xl font-Plus_Jakarta_Sans text-[#848383]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna{" "}
+            We at CNE are passionate about Ayurveda and the science of well
+            being. Join us on this journey by subscribing to our newsletter and
+            being a part of the natural community.
           </p>
           <Input
             variant="bordered"

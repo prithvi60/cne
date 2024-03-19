@@ -12,7 +12,7 @@ export const Hero = () => {
           className="w-full h-auto"
           speed={-20}
         >
-          <div className="block absolute top-52  lg:top-36 w-full h-[640px] lg:h-[850px] xl:h-[1200px] ">
+          <div className="block absolute top-52 lg:top-36 w-full h-[640px] lg:h-[850px] xl:h-[1200px] ">
             <Image
               src={"/parallexlayer3.png"}
               fill
