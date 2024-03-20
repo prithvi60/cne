@@ -12,7 +12,7 @@ const Newsletter = () => {
             Subscribe to our newsletter
           </h1>
           <h3 className="text-base md:text-2xl lg:text-[28px] text-black font-Prata capitalize h-auto">
-            Send me your email address
+          Enter your email address for regular Ayurveda Updates
           </h3>
           <p className="text-base font-medium md:text-xl lg:text-2xl font-Plus_Jakarta_Sans text-[#848383]">
             We at CNE are passionate about Ayurveda and the science of well
