@@ -39,7 +39,7 @@ export const Our_Brands = () => {
                 loading="lazy"
                 src={list.img}
                 alt={list.alt}
-                className="object-contain p-6 transition-all ease-linear transform cursor-pointer md:p-4 lg:p-10 hover:scale-105 w-full h-44 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px]"
+                className="object-contain p-6 transition-all ease-linear transform cursor-pointer md:p-4 lg:p-10 hover:scale-105 w-[320px] h-44 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px]"
               />
             </Link>
           ))}
