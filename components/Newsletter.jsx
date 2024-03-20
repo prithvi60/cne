@@ -5,7 +5,7 @@ import { Input } from "@nextui-org/input";
 
 const Newsletter = () => {
   return (
-    <section className="relative w-full h-full my-10">
+    <section className="relative w-full h-full my-10" id="Contact Us">
       <div className="flex flex-col-reverse items-center justify-center gap-5 mx-auto wrapper md:flex-row">
         <div className="relative block w-full space-y-5 md:w-1/2 lg:w-2/5">
           <h1 className="hidden md:block text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
