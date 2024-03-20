@@ -8,9 +8,8 @@ const loading = () => {
         <img
           src={"/logo.svg"}
           alt="Logo"
-          fill
+          // fill
           className="mt-3.5 md:mt-0 w-32 h-32 md:w-56 md:h-56 animate-bounce"
-          priority
         />
       {/* </div> */}
       {/* <h3 className="text-base font-semibold tracking-wider font-Prata md:text-4xl text-primary"><span className="px-3 animate-pulse md:px-8">Loading...</span></h3> */}
