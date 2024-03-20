@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
 import {
@@ -11,7 +12,6 @@ import {
 } from "@nextui-org/navbar";
 import { Link } from "react-scroll";
 import { NavLink } from "@/libs/data";
-import Image from "next/image";
 
 const Navbar_Component = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,7 +65,7 @@ const Navbar_Component = () => {
     >
       <NavbarContent>
         <NavbarBrand>
-          <div className="relative w-20 h-20 md:w-28 md:h-28">
+          {/* <div className="relative w-20 h-20 md:w-28 md:h-28">
             <Image
               src={"/logo.svg"}
               alt="Logo"
@@ -73,7 +73,13 @@ const Navbar_Component = () => {
               className="mt-3.5 md:mt-0 hover:animate-appearance-in cursor-pointer"
               priority
             />
-          </div>
+          </div> */}
+           <img
+           loading="eager"
+              src={"/logo.svg"}
+              alt="Logo"
+              className="mt-3.5 md:mt-0 hover:animate-appearance-in cursor-pointer w-20 h-20 md:w-28 md:h-28"
+            />
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent

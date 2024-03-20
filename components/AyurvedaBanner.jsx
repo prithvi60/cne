@@ -1,15 +1,12 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { ImQuotesRight } from "react-icons/im";
 import { ImQuotesLeft } from "react-icons/im";
 
 export const AyurvedaBanner = () => {
-
   return (
     <section className="relative w-full h-full">
-      <div
-        className="z-20 bg-primary"
-      >
+      <div className="z-20 bg-primary">
         <div className="flex flex-col-reverse w-full h-full max-w-full gap-5 my-6 md:gap-10 lg:flex-row wrapper">
           <p className="w-full text-base text-white font-Plus_Jakarta_Sans md:text-2xl lg:w-1/2">
             Our Ayurveda products are designed to help you achieve your health
@@ -52,22 +49,24 @@ export const AyurvedaBanner = () => {
           </div>
         </div>
       </div>
-      <div className="block absolute -top-20 right-0 w-[10rem] h-[10rem] animate-pulse -z-10 md:-top-24  xl:-top-[10.5rem] md:h-[12rem] md:w-[12rem] xl:h-[18rem] xl:w-[18rem]">
-        <Image
-          fill
+      {/* <div className="block absolute -top-20 right-0 w-[10rem] h-[10rem] animate-pulse -z-10 md:-top-24  xl:-top-[10.5rem] md:h-[12rem] md:w-[12rem] xl:h-[18rem] xl:w-[18rem]"> */}
+        <img
+          // fill
+          loading="lazy"
           src={"/Ayurveda bg 5.svg"}
           alt="svg image"
-          className="object-contain"
+          className="object-contain block absolute -top-20 right-0 w-[10rem] h-[10rem] animate-pulse -z-10 md:-top-24  xl:-top-[10.5rem] md:h-[12rem] md:w-[12rem] xl:h-[18rem] xl:w-[18rem]"
         />
-      </div>
-      <div className="block absolute -bottom-[6.5rem] right-0 w-[9rem] h-[9rem] animate-pulse -z-10 md:h-[14rem] md:w-[14rem] md:-bottom-36 xl:h-[20rem] xl:w-[20rem] xl:-bottom-[14rem] 2xl:-bottom-[15rem]">
-        <Image
-          fill
+      {/* </div> */}
+      {/* <div className="block absolute -bottom-[6.5rem] right-0 w-[9rem] h-[9rem] animate-pulse -z-10 md:h-[14rem] md:w-[14rem] md:-bottom-36 xl:h-[20rem] xl:w-[20rem] xl:-bottom-[14rem] 2xl:-bottom-[15rem]"> */}
+        <img
+          // fill
+          loading="lazy"
           src={"/Ayurveda bg 4.svg"}
           alt="svg image"
-          className="object-contain"
+          className="object-contain block absolute -bottom-[6.5rem] right-0 w-[9rem] h-[9rem] animate-pulse -z-10 md:h-[14rem] md:w-[14rem] md:-bottom-36 xl:h-[20rem] xl:w-[20rem] xl:-bottom-[14rem] 2xl:-bottom-[15rem]"
         />
-      </div>
+      {/* </div> */}
     </section>
   );
 };

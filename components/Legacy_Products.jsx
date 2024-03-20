@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useState } from "react";
 import { Tabs, Tab } from "@nextui-org/tabs";
-import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { legacyProducts } from "@/libs/data";
 
@@ -38,8 +38,9 @@ export const Legacy_Products = () => {
             Legacy Products
           </h1>
           <div className="hidden lg:block absolute -top-2 lg:left-32 xl:left-[17rem] -z-10 w-12 h-12  xl:w-[5rem] xl:h-[5rem] animate-pulse">
-            <Image
-              fill
+            <img
+              // fill
+              loading="lazy"
               src={"/legacy bg 1.svg"}
               alt="svg image"
               className="object-contain"
@@ -68,12 +69,13 @@ export const Legacy_Products = () => {
                       className="z-20 w-full h-full p-3 space-y-3 bg-white rounded-md shadow-xl sm:min-w-40 group md:p-5 md:min-w-48 lg:min-w-56 xl:min-w-80 md:space-y-5"
                       key={idx}
                     >
-                      <div className="relative w-full h-48 overflow-hidden md:h-60 lg:h-72 ">
-                        <Image
-                          fill
+                      <div className="relative overflow-hidden ">
+                        <img
+                          // fill
+                          loading="lazy"
                           src={item.img}
                           alt={item.alt}
-                          className="object-contain transition-all ease-in-out transform md:p-5 group-hover:scale-105"
+                          className="object-contain w-full h-48 transition-all ease-in-out transform md:p-5 group-hover:scale-105 md:h-60 lg:h-72"
                         />
                       </div>
                       <div className="space-y-4 text-center">
@@ -101,16 +103,16 @@ export const Legacy_Products = () => {
         </div>
       </div>
       <div className="hidden lg:block absolute top-[30rem] right-0 -z-10 w-[7rem] h-[7rem] animate-pulse">
-        <Image
-          fill
+        <img
+          // fill
           src={"/legacy bg 2.svg"}
           alt="svg image"
           className="object-contain"
         />
       </div>
       <div className="block absolute -bottom-[6.5rem] left-4 xl:bottom-14 md:left-0 2xl:left-10 z-0 w-16 h-16 md:w-[8rem] md:h-[8rem] animate-pulse">
-        <Image
-          fill
+        <img
+          loading="lazy"
           src={"/legacy bg 3.svg"}
           alt="svg image"
           className="object-contain"

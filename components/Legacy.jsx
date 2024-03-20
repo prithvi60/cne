@@ -2,13 +2,13 @@
 import * as React from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-const svgVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    rotate: 0,
-    transition: { duration: 1 },
-  },
-};
+// const svgVariants = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     rotate: 0,
+//     transition: { duration: 1 },
+//   },
+// };
 const pathVariants = {
   hidden: {
     opacity: 0,
@@ -33,7 +33,7 @@ const Legacy = (props) => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    ["1%", width > 500 ? "-15%" : "-1009erthjkllkjhgfdfghjytresdaz` ` q%"]
+    ["1%", width > 500 ? "-15%" : "-100%"]
   );
   React.useEffect(() => {
     setWidth(window.innerWidth);

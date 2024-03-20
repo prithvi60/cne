@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { brands } from "@/libs/data";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 // import { motion } from "framer-motion";
@@ -30,46 +30,51 @@ export const Our_Brands = () => {
           {brands.map((list, index) => (
             <Link
             href={list.ref}
-              className="relative overflow-hidden transition-all ease-linear transform rounded-md shadow-xl w-full h-44 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px] hover:shadow-primary z-20 bg-white"
+              className="relative z-20 overflow-hidden transition-all ease-linear transform bg-white rounded-md shadow-xl hover:shadow-primary"
               key={index}
               target="_blank"
             >
-              <Image
-                fill
+              <img
+                // fill
+                loading="lazy"
                 src={list.img}
                 alt={list.alt}
-                className="object-contain p-6 transition-all ease-linear transform cursor-pointer md:p-4 lg:p-10 hover:scale-105"
+                className="object-contain p-6 transition-all ease-linear transform cursor-pointer md:p-4 lg:p-10 hover:scale-105 w-full h-44 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px]"
               />
             </Link>
           ))}
         </div>
         <div className="absolute z-0 top-2 -left-64 w-[23rem] h-[23rem] md:w-[30rem] md:h-[30rem] md:top-10 md:-left-[18rem] lg:w-[40rem] lg:h-[40rem] lg:-left-72 xl:-left-52 2xl:left-0 animate-pulse">
-          <Image
-            fill
+          <img
+            // fill
+            loading="lazy"
             src={"/brand bg 1.svg"}
             alt="svg image"
             className="object-contain"
           />
         </div>
-        <div
+        {/* <div
           className="absolute top-24 md:left-[14rem]
         lg:left-[28rem] 2xl:left-[42rem] z-0 left-40 h-12 w-12 md:w-[8rem] md:h-[8rem] animate-pulse"
-        >
-          <Image
-            fill
+        > */}
+          <img
+            // fill
+            loading="lazy"
             src={"/brand bg 3.svg"}
             alt="svg image"
-            className="object-contain"
+            className="object-contain absolute top-24 md:left-[14rem]
+            lg:left-[28rem] 2xl:left-[42rem] z-0 left-40 h-12 w-12 md:w-[8rem] md:h-[8rem] animate-pulse"
           />
-        </div>
-        <div className="absolute hidden w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48 animate-pulse">
-          <Image
-            fill
+        {/* </div> */}
+        {/* <div className="absolute hidden w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48 animate-pulse"> */}
+          <img
+            // fill
+            loading="lazy"
             src={"/brand bg 5.svg"}
             alt="svg image"
-            className="object-contain"
+            className="absolute hidden object-contain w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48 animate-pulse"
           />
-        </div>
+        {/* </div> */}
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
 import { Input } from "@nextui-org/input";
-import Image from "next/image";
 
 const Newsletter = () => {
   return (
@@ -27,9 +27,10 @@ const Newsletter = () => {
             placeholder="Enter Your Email"
             className="w-full placeholder:text-zinc-400 md:w-4/5"
           />
-          <div className="hidden lg:block absolute  -z-10 w-[4rem] h-[4rem] -left-28 top-32 animate-pulse">
-            <Image
-              fill
+          <div className="hidden lg:block absolute -z-10 w-[4rem] h-[4rem] -left-28 top-32 animate-pulse">
+            <img
+              // fill
+              loading="lazy"
               src={"/legacy bg 1.svg"}
               alt="svg image"
               className="object-contain"
@@ -41,30 +42,33 @@ const Newsletter = () => {
             Subscribe to our newsletter
           </h1>
           <div className="relative w-full h-full">
-            <div className="relative w-full h-[300px] md:h-[375px] lg:w-[450px] lg:h-[500px] overflow-hidden group">
-              <Image
+            <div className="relative overflow-hidden group">
+              <img
+                // fill
+                loading="lazy"
                 src={"/evolution.png"}
-                fill
                 alt="product Image"
-                className="object-cover transition-all ease-in-out transform cursor-pointer group-hover:scale-105"
+                className="object-cover transition-all ease-in-out transform cursor-pointer group-hover:scale-105 w-full h-[300px] md:h-[375px] lg:w-[450px] lg:h-[500px]"
               />
             </div>
-            <div className="block absolute -bottom-14 md:-bottom-20 left-0 -z-10 w-[7rem] h-[7rem] md:w-[10rem] md:h-[10rem] animate-pulse">
-              <Image
-                fill
-                src={"/newsletter bg 1.svg"}
-                alt="svg image"
-                className="object-contain"
-              />
-            </div>
-            <div className="hidden md:block absolute -bottom-14 md:right-0 lg:right-20 -z-10 w-[5rem] h-[5rem] animate-pulse rotate-45">
-              <Image
-                fill
-                src={"/legacy bg 1.svg"}
-                alt="svg image"
-                className="object-contain"
-              />
-            </div>
+            {/* <div className="block absolute -bottom-14 md:-bottom-20 left-0 -z-10 w-[7rem] h-[7rem] md:w-[10rem] md:h-[10rem] animate-pulse"> */}
+            <img
+              // fill
+              loading="lazy"
+              src={"/newsletter bg 1.svg"}
+              alt="svg image"
+              className="object-contain block absolute -bottom-14 md:-bottom-20 left-0 -z-10 w-[7rem] h-[7rem] md:w-[10rem] md:h-[10rem] animate-pulse"
+            />
+            {/* </div> */}
+            {/* <div className="hidden md:block absolute -bottom-14 md:right-0 lg:right-20 -z-10 w-[5rem] h-[5rem] animate-pulse rotate-45"> */}
+            <img
+              // fill
+              loading="lazy"
+              src={"/legacy bg 1.svg"}
+              alt="svg image"
+              className="object-contain hidden md:block absolute -bottom-14 md:right-0 lg:right-20 -z-10 w-[5rem] h-[5rem] animate-pulse rotate-45"
+            />
+            {/* </div> */}
           </div>
         </div>
       </div>

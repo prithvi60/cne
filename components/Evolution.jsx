@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import Image from "next/image";
 import React from "react";
 import ReactPlayer from "react-player/lazy";
 
@@ -38,8 +38,9 @@ export const Evolution = () => {
               />
             </div>
             <div className="absolute right-0 z-0 block w-20 h-20 -top-10 lg:hidden animate-pulse">
-              <Image
-                fill
+              <img
+                // fill
+                loading="lazy"
                 src={"/brand bg 3.svg"}
                 alt="svg image"
                 className="object-contain"
@@ -48,8 +49,9 @@ export const Evolution = () => {
           </div>
         </div>
         <div className="hidden lg:block absolute lg:top-[27rem] xl:top-[20rem] left-0 z-0 w-[20rem] h-[25rem] animate-pulse">
-          <Image
-            fill
+          <img
+            // fill
+            loading="lazy"
             src={"/evolution bg.svg"}
             alt="svg image"
             className="object-contain"

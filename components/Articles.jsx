@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { articleItems } from "@/libs/data";
 import { Button } from "@nextui-org/button";
-import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
 
@@ -45,9 +45,7 @@ export const Articles = () => {
   };
   return (
     <section className="relative w-full h-full mt-10 md:mb-40">
-      <div
-        className="mb-24 space-y-8 wrapper md:space-y-12"
-      >
+      <div className="mb-24 space-y-8 wrapper md:space-y-12">
         <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px] text-center w-full bg-white">
           {/* Read Our Articles */}
           Dive into the world of Ayurveda through our blog
@@ -59,12 +57,13 @@ export const Articles = () => {
                 className="w-full h-full pb-4 space-y-3 overflow-hidden rounded-md shadow-xl sm:w-40 group md:w-96 md:space-y-4"
                 key={id}
               >
-                <div className="relative w-full h-48 overflow-hidden md:h-60 lg:h-72">
-                  <Image
-                    fill
+                <div className="relative overflow-hidden ">
+                  <img
+                    // fill
+                    loading="lazy"
                     src={list.img}
                     alt={"article image"}
-                    className="object-cover transition-all ease-in-out transform group-hover:scale-105"
+                    className="object-cover w-full h-48 transition-all ease-in-out transform group-hover:scale-105 md:h-60 lg:h-72"
                   />
                 </div>
                 <div className="px-3 py-2 space-y-2">
@@ -89,26 +88,30 @@ export const Articles = () => {
           </Button>
         </div>
       </div>
-      <div className="block absolute top-16 md:top-20 lg:top-56 left-0 -z-10 w-[15rem] h-[20rem] lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse">
-        <Image
-          fill
-          src={"/Articles bg 1.svg"}
-          alt="svg image"
-          className="object-contain"
-        />
-      </div>
-      <div
+      {/* <div className="block absolute top-16 md:top-20 lg:top-56 left-0 -z-10 w-[15rem] h-[20rem] lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse"> */}
+      <img
+        // fill
+        loading="lazy"
+        src={"/Articles bg 1.svg"}
+        alt="svg image"
+        className="object-contain block absolute top-16 md:top-20 lg:top-56 left-0 -z-10 w-[15rem] h-[20rem] lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse"
+      />
+      {/* </div> */}
+      {/* <div
         className="block absolute -bottom-28 right-0 w-[10rem] h-[20rem] -z-10
       md:w-[10rem] md:h-[20rem]
       lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse"
-      >
-        <Image
-          fill
-          src={"/Articles bg 2.svg"}
-          alt="svg image"
-          className="object-contain"
-        />
-      </div>
+      > */}
+      <img
+        // fill
+        loading="lazy"
+        src={"/Articles bg 2.svg"}
+        alt="svg image"
+        className="object-contain block absolute -bottom-28 right-0 w-[10rem] h-[20rem] -z-10
+          md:w-[10rem] md:h-[20rem]
+          lg:w-[20rem] lg:h-[30rem] 2xl:w-[30rem] 2xl:h-[40rem] animate-pulse"
+      />
+      {/* </div> */}
     </section>
   );
 };
