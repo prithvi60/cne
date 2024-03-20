@@ -8,14 +8,14 @@ export const Global = () => {
       <div className=" wrapper" id={"Global"}>
         <div className="z-20 flex flex-col items-start gap-5 mb-6 bg-white md:flex-row md:items-start">
           <div className="w-full md:w-1/2">
-            <div className="relative w-full overflow-hidden h-80 lg:h-[500px] group z-10">
+            <div className="relative z-10 overflow-hidden group">
               <img
                 src={"/Mask 1.png"}
                 alt="image"
                 // fill
                 loading="lazy"
                 className={
-                  "object-contain group-hover:scale-105 transition-all ease-in-out transform cursor-pointer"
+                  "object-contain group-hover:scale-105 transition-all ease-in-out transform cursor-pointer h-80 lg:h-[500px] w-full"
                 }
               />
             </div>
