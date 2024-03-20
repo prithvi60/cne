@@ -2,11 +2,7 @@
 import * as React from "react";
 import {
   motion,
-  useTransform,
-  useScroll,
   useInView,
-  useAnimation,
-  motionValue,
 } from "framer-motion";
 import { useRef } from "react";
 
@@ -24,60 +20,53 @@ const pathVariants = {
     },
   },
 };
-const animationVariants = {
-  hidden: { opacity: 0,x: 0 },
-  visible: { opacity: 1, x: 100, transition: { duration: 3, delay : 0.5} },
-};
+const smoothScrollTo = (element, target, duration) => {
+  const start = element.scrollLeft;
+  const change = target - start;
+  let startTime = null;
 
-const Legacy = (props) => {
-  const [width, setWidth] = React.useState(null);
-  // const containerRef = useRef(null);
-  const base = motionValue(0)
-  const controls = useAnimation();
-  const targetRef = useRef(null);
-  const isInView = useInView(targetRef, {
-    margin: "-300px 0px -500px 0px",
-  });
-  React.useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
+  const animateScroll = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+    const newPos = start + change * easeInOutQuad(progress);
+    element.scrollLeft = newPos;
+    if (progress < 1) {
+      window.requestAnimationFrame(animateScroll);
     }
-  }, [isInView, controls]);
-  // const { scrollYProgress, scrollY } = useScroll({
-  //   target: targetRef,
-  // });
-  const x = useTransform(
-    base,
-    [0, 1],
-    ["1%", width > 500 ? "-15%" : "-100%"]
-  );
+  };
+
+  window.requestAnimationFrame(animateScroll);
+};
+const Legacy = (props) => {
+  const targetRef = useRef(null);
+  const isInView = useInView(targetRef, { amount: 0.3 });
+
+  const scrollContainerRef = React.useRef(null);
   React.useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-  // console.log("scroll div",scrollYProgress,scrollY)
-  // console.log(containerRef);
-  // console.log(isInView);
+    // scroll to end
+    if (isInView && scrollContainerRef.current) {
+      const scrollWidth = scrollContainerRef.current.scrollWidth;
+      const clientWidth = scrollContainerRef.current.clientWidth;
+      const targetScrollPosition = scrollWidth - clientWidth;
+      smoothScrollTo(scrollContainerRef.current, targetScrollPosition, 1200);
+    }
+    // scroll to start
+    else if (scrollContainerRef.current) {
+      smoothScrollTo(scrollContainerRef.current, 0, 1500);
+    }
+  }, [isInView]);
+
   return (
     <section
       className="relative w-full h-full mx-auto space-y-8 md:py-12 "
       id="Legacy"
-      // ref={containerRef}
     >
       <h1 className="text-center text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
         Legacy
       </h1>
-      <div className="overflow-x-scroll custom">
-        <motion.div
-          ref={targetRef}
-          animate={controls}
-          variants={animationVariants}
-          // transition={
-          // }
-          className="flex w-[1200px] md:w-[150vw]"
-          style={{ x }}
-        >
+      <div className="overflow-x-scroll custom" ref={scrollContainerRef}>
+        <motion.div ref={targetRef} className="flex w-[1200px] md:w-[150vw]">
           <motion.svg
             // preserveAspectRatio="none"
             // className={"scale-150"}
