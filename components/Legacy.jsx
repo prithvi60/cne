@@ -1,14 +1,15 @@
 "use client";
 import * as React from "react";
-import { motion, useTransform, useScroll, useInView } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  useInView,
+  useAnimation,
+  motionValue,
+} from "framer-motion";
 import { useRef } from "react";
-// const svgVariants = {
-//   hidden: { opacity: 0 },
-//   visible: {
-//     rotate: 0,
-//     transition: { duration: 1 },
-//   },
-// };
+
 const pathVariants = {
   hidden: {
     opacity: 0,
@@ -23,16 +24,32 @@ const pathVariants = {
     },
   },
 };
+const animationVariants = {
+  hidden: { opacity: 0,x: 0 },
+  visible: { opacity: 1, x: 100, transition: { duration: 3, delay : 0.5} },
+};
+
 const Legacy = (props) => {
   const [width, setWidth] = React.useState(null);
-  const containerRef = useRef(null)
+  // const containerRef = useRef(null);
+  const base = motionValue(0)
+  const controls = useAnimation();
   const targetRef = useRef(null);
-  const isInView = useInView(targetRef,{ margin: "-500px 0px -500px 0px"})
-  const { scrollYProgress, scrollY } = useScroll({
-    target: targetRef,
+  const isInView = useInView(targetRef, {
+    margin: "-300px 0px -500px 0px",
   });
+  React.useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [isInView, controls]);
+  // const { scrollYProgress, scrollY } = useScroll({
+  //   target: targetRef,
+  // });
   const x = useTransform(
-    scrollYProgress,
+    base,
     [0, 1],
     ["1%", width > 500 ? "-15%" : "-100%"]
   );
@@ -40,18 +57,24 @@ const Legacy = (props) => {
     setWidth(window.innerWidth);
   }, []);
   // console.log("scroll div",scrollYProgress,scrollY)
+  // console.log(containerRef);
+  // console.log(isInView);
   return (
     <section
       className="relative w-full h-full mx-auto space-y-8 md:py-12 "
       id="Legacy"
-      ref={containerRef}
+      // ref={containerRef}
     >
       <h1 className="text-center text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
         Legacy
       </h1>
       <div className="overflow-x-scroll custom">
-        <div
+        <motion.div
           ref={targetRef}
+          animate={controls}
+          variants={animationVariants}
+          // transition={
+          // }
           className="flex w-[1200px] md:w-[150vw]"
           style={{ x }}
         >
@@ -1364,7 +1387,7 @@ const Legacy = (props) => {
             />
           </defs>
         </motion.svg> */}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
