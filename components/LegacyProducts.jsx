@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useEffect, useState } from "react";
-import { Tabs, Tab } from "@nextui-org/tabs";
+// import { Tabs, Tab } from "@nextui-org/tabs";
 import { Button } from "@nextui-org/button";
 import { legacyProducts } from "@/libs/data";
 
-export const Legacy_Products = () => {
-  const isWidth = typeof window !== "undefined" && window.innerWidth;
+export const LegacyProducts = () => {
+    const isWidth = typeof window !== "undefined" && window.innerWidth;
   const [width, setWidth] = useState(isWidth);
   const [count, setCount] = useState(3);
   const [ourProducts, setOurProducts] = useState(legacyProducts);
@@ -33,10 +33,11 @@ export const Legacy_Products = () => {
       : setCount(4);
   }, [width]);
 
-  const handleSelection = (key) => {
+  const handleSelection = (key) =>{
     // console.log(parseInt(key))
-    setSelected(key);
-  };
+    setSelected(key)
+  }
+
   return (
     <section className="relative w-full h-full my-10">
       <div className="space-y-8 wrapper md:space-y-12">
@@ -60,7 +61,7 @@ export const Legacy_Products = () => {
             radius="lg"
             color="primary"
             className="absolute text-lg font-bold text-white top-2 left-24"
-            onPress={() => setSelected((prev) => prev - 1)}
+            onPress={()=>setSelected(prev => prev - 1)}
           >
             Prev
           </Button>
@@ -69,27 +70,27 @@ export const Legacy_Products = () => {
             radius="lg"
             color="primary"
             className="absolute text-lg font-bold text-white top-2 right-24"
-            onPress={() => setSelected((prev) => prev + 1)}
+            onPress={()=>setSelected(prev => prev + 1)}
           >
             Next
           </Button>
-          <Tabs
-            aria-label="Options"
-            selectedKey={selected}
-            onSelectionChange={handleSelection}
-            classNames={{
-              base: "!overflow-hidden w-full h-full justify-center items-center",
-              tabList: "!overflow-scroll font-Prata font-semibold",
-              tabContent: "group-data-[selected=true]:font-bold",
-              panel: "w-full",
-            }}
+          <div
+            // aria-label="Options"
+            // selectedKey={selected}
+            // onSelectionChange={handleSelection}
+            // classNames={{
+            //   base: "!overflow-hidden w-full h-full justify-center items-center",
+            //   tabList: "!overflow-scroll font-Prata font-semibold",
+            //   tabContent: "group-data-[selected=true]:font-bold",
+            //   panel: "w-full",
+            // }}
             variant="underlined"
             color="primary"
             size={"lg"}
             className="mb-5"
           >
             {legacyProducts.map((list, id) => (
-              <Tab key={id} title={list.type}>
+              <div key={id} title={list.type}>
                 <div className="grid w-full h-full gap-5 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {list.products.slice(0, count).map((item, idx) => (
                     <div
@@ -124,9 +125,9 @@ export const Legacy_Products = () => {
                     </div>
                   ))}
                 </div>
-              </Tab>
+              </div>
             ))}
-          </Tabs>
+          </div>
         </div>
       </div>
       <div className="hidden lg:block absolute top-[30rem] right-0 -z-10 w-[7rem] h-[7rem] animate-pulse">
@@ -146,5 +147,5 @@ export const Legacy_Products = () => {
         />
       </div>
     </section>
-  );
-};
+  )
+}

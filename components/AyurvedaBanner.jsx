@@ -5,10 +5,10 @@ import { ImQuotesLeft } from "react-icons/im";
 
 export const AyurvedaBanner = () => {
   return (
-    <section className="relative w-full h-full">
+    <section className="relative w-full h-full md:mb-20 xl:mb-40 2xl:mb-44">
       <div className="z-20 bg-primary">
         <div className="flex flex-col-reverse w-full h-full max-w-full gap-5 my-6 md:gap-10 lg:flex-row wrapper">
-          <p className="w-full text-base text-white font-Plus_Jakarta_Sans md:text-2xl lg:w-1/2">
+          <p className="w-full text-base text-white font-Plus_Jakarta_Sans md:text-2xl lg:w-1/2 !leading-[2.25rem]">
             Our Ayurveda products are designed to help you achieve your health
             goals and live your best life.
             <br />

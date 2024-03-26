@@ -4,7 +4,7 @@ export const NavLink = [
   "Brands",
   "Global",
   "Ayurveda",
-  "Contact Us",
+  // "Contact Us",
 ];
 
 export const brands = [

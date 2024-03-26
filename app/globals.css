@@ -24,7 +24,20 @@
   padding: 0 5px;
 }
 
+/* .scrollBar {
+  overflow
+} */
+
+.scrollbar-hidden{
+  overflow-x: hidden;
+}
+
+.scrollbar-hidden:hover{
+  overflow-x: scroll;
+}
+
 .custom::-webkit-scrollbar {
+  display: block;
   height: 10px;
 }
 

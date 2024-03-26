@@ -14,7 +14,7 @@ export const Our_Brands = () => {
   //   },
   // };
   return (
-    <section className="relative w-full h-full">
+    <section className="relative w-full h-full my-[7.5rem]">
       <div
         id={"Brands"}
         // variants={variants}

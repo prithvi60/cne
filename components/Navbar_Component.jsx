@@ -97,9 +97,9 @@ const Navbar_Component = () => {
               href={`${i}`}
               title={i}
               spy={true}
-              offset={-175}
+              offset={-200}
               smooth={true}
-              duration={500}
+              duration={1000}
               onClick={() => setActiveItem(i)}
             >
               {i}
@@ -127,7 +127,7 @@ const Navbar_Component = () => {
               spy={true}
               offset={-100}
               smooth={true}
-              duration={500}
+              duration={1000}
               className="w-full"
               size="lg"
               onClick={() => handleMenuBar(item)}

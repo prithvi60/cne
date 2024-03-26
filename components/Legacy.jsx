@@ -59,13 +59,13 @@ const Legacy = (props) => {
 
   return (
     <section
-      className="relative w-full h-full mx-auto space-y-8 md:py-12 "
+      className="relative w-full h-full mx-auto space-y-8 md:py-12 mt-36"
       id="Legacy"
     >
       <h1 className="text-center text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
         Legacy
       </h1>
-      <div className="overflow-x-scroll custom" ref={scrollContainerRef}>
+      <div className="scrollbar-hidden custom" ref={scrollContainerRef}>
         <motion.div ref={targetRef} className="flex w-[1200px] md:w-[150vw]">
           <motion.svg
             // preserveAspectRatio="none"

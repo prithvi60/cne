@@ -19,11 +19,11 @@ export default function Home() {
       <Legacy />
       <Our_Brands />
       <Global />
-      <Evolution />
+      {/* <Evolution /> */}
       <Legacy_Products />
       <Ayurveda />
       <AyurvedaBanner />
-      <Newsletter />
+      {/* <Newsletter /> */}
       {/* <Articles /> */}
       <Footer/>
     </main>

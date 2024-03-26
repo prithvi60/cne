@@ -1,14 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
+"use client"
 import { Button } from "@nextui-org/button";
 import React from "react";
+import ReactPlayer from "react-player/lazy";
 
 export const Global = () => {
   return (
-    <section className="relative w-full h-full my-12">
-      <div className=" wrapper" id={"Global"}>
+    <section className="relative w-full h-full">
+      <div className="wrapper my-36" id={"Global"}>
         <div className="z-20 flex flex-col items-start gap-5 mb-6 bg-white md:flex-row md:items-start">
           <div className="w-full md:w-1/2">
-            <div className="relative z-10 overflow-hidden group">
+            {/* <div className="relative z-10 overflow-hidden group">
               <img
                 src={"/Mask 1.png"}
                 alt="image"
@@ -17,6 +19,14 @@ export const Global = () => {
                 className={
                   "object-contain group-hover:scale-105 transition-all ease-in-out transform cursor-pointer h-80 lg:h-[500px] w-full"
                 }
+              />
+            </div> */}
+            <div className="relative w-full md:mt-2 overflow-hidden h-64 md:h-96 lg:h-[450px] z-20">
+              <ReactPlayer
+                width={"100%"}
+                height={"100%"}
+                controls
+                url="https://youtu.be/bACMBZ-0nCQ?si=HEM-qm6w-OGPNHcr"
               />
             </div>
           </div>
@@ -28,14 +38,14 @@ export const Global = () => {
               &ldquo;We are a global company with a presence in over 10
               countries.&rdquo;
             </p>
-            <p className="text-base md:text-lg lg:text-xl text-grey-100 font-Plus_Jakarta_Sans">
+            <p className="text-base md:text-lg lg:text-xl text-grey-100 font-Plus_Jakarta_Sans !leading-[2rem]">
               We have a strong focus on Asia, where we operate in Sri Lanka,
               Malaysia, the Middle East, Nepal, Philippines, Taiwan and
               Bangladesh. We are committed to providing our customers with
               high-quality products and excellent service.
             </p>
             <div className="z-20 hidden space-y-7 lg:block">
-              <p className="text-base md:text-lg lg:text-xl ">
+              <p className="text-base md:text-lg lg:text-xl !leading-[2rem]">
                 We are confident that our global presence will continue to grow
                 in the years to come. We are committed to providing our
                 customers with the best possible products and services, wherever

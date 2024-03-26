@@ -27,7 +27,7 @@ export const Ayurveda = () => {
           <h3 className="text-2xl md:text-[32px] lg:text-[40px] text-secondary font-Prata text-center capitalize leading-snug tracking-wide z-10">
             Our Ayurveda products can help you to:
           </h3>
-          <div className="hidden lg:block absolute -top-20 xl:-top-10 left-44 -z-10 lg:w-[3rem] lg:h-[3rem] animate-pulse">
+          <div className="hidden lg:block absolute -top-20 xl:-top-16 left-44 -z-10 lg:w-[3rem] lg:h-[3rem] animate-pulse">
             <img
               // fill
               loading="lazy"
