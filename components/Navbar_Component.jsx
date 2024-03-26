@@ -113,7 +113,7 @@ const Navbar_Component = () => {
           className="p-4 md:hidden"
         />
       </NavbarContent>
-      <NavbarMenu className="mt-12 text-center bg-white bg-opacity-85">
+      <NavbarMenu className="mt-10 text-center bg-white bg-opacity-85">
         {NavLink.map((item, index) => (
           <NavbarMenuItem
             key={index}

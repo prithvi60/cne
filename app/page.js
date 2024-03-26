@@ -24,7 +24,7 @@ export default function Home() {
       <Ayurveda />
       <AyurvedaBanner />
       <Newsletter />
-      <Articles />
+      {/* <Articles /> */}
       <Footer/>
     </main>
   );

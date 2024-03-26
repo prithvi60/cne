@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <footer>
       <div className="flex items-center justify-center w-full h-full gap-12 mb-3 text-black md:hidden">
-        <Link href={"#"}>
+        {/* <Link href={"#"}>
           <FaFacebookF className="text-xl hover:animate-appearance-in" />
         </Link>
         <Link href={"#"} className="text-xl hover:animate-appearance-in">
           {" "}
           <FaInstagram />
-        </Link>
+        </Link> */}
         <Link href={"#"} className="text-xl hover:animate-appearance-in">
           <FaLinkedinIn />
         </Link>
@@ -27,13 +27,13 @@ const Footer = () => {
           <div className="flex flex-row items-center justify-center md:justify-between ">
             <p className="mt-2 text-xs font-medium tracking-wider text-center text-white uppercase md:text-left font-Plus_Jakarta_Sans">{`© ${currentYear}  Chinni Nambi Enterprises. All rights reserved.`}</p>
             <div className="items-center hidden gap-8 text-white md:flex">
-              <Link href={"#"}>
+              {/* <Link href={"#"}>
                 <FaFacebookF className="text-lg hover:animate-appearance-in" />
               </Link>
               <Link href={"#"} className="text-lg hover:animate-appearance-in">
                 {" "}
                 <FaInstagram />
-              </Link>
+              </Link> */}
               <Link href={"#"} className="text-lg hover:animate-appearance-in">
                 <FaLinkedinIn />
               </Link>
