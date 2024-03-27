@@ -65,7 +65,7 @@ const Legacy = (props) => {
       <h1 className="text-center text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata capitalize h-auto leading-[50px]">
         Legacy
       </h1>
-      <div className="scrollbar-hidden custom" ref={scrollContainerRef}>
+      <div className="overflow-x-scroll lg:overflow-x-hidden lg:hover:overflow-x-scroll custom" ref={scrollContainerRef}>
         <motion.div ref={targetRef} className="flex w-[1200px] md:w-[150vw]">
           <motion.svg
             // preserveAspectRatio="none"

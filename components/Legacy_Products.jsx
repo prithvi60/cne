@@ -9,7 +9,6 @@ export const Legacy_Products = () => {
   const isWidth = typeof window !== "undefined" && window.innerWidth;
   const [width, setWidth] = useState(isWidth);
   const [count, setCount] = useState(3);
-  const [ourProducts, setOurProducts] = useState(legacyProducts);
   const [selected, setSelected] = useState("All Genre");
 
   useEffect(() => {
@@ -33,10 +32,14 @@ export const Legacy_Products = () => {
       : setCount(4);
   }, [width]);
 
-  const handleSelection = (key) => {
-    // console.log(parseInt(key))
-    setSelected(key);
+  const handleNext = () => {
+    setSelected((prev) => String(Number(prev) + 1));
   };
+
+  const handlePrev = () => {
+    setSelected((prev) => String(Number(prev) - 1));
+  };
+
   return (
     <section className="relative w-full h-full my-10">
       <div className="space-y-8 wrapper md:space-y-12">
@@ -54,29 +57,31 @@ export const Legacy_Products = () => {
             />
           </div>
         </div>
-        <div className="relative z-20 flex flex-col items-center justify-center gap-4">
+        <div className="relative z-20 flex flex-col items-center justify-center">
           <Button
             size="sm"
             radius="lg"
+            isDisabled={selected <= 0 ? true : false}
             color="primary"
-            className="absolute text-lg font-bold text-white top-2 left-24"
-            onPress={() => setSelected((prev) => prev - 1)}
+            className="absolute text-lg hidden lg:block font-bold text-white lg:top-2  lg:left-20 xl:left-72"
+            onPress={handlePrev}
           >
             Prev
           </Button>
           <Button
             size="sm"
             radius="lg"
+            isDisabled={legacyProducts.length - 1 <= selected ? true : false}
             color="primary"
-            className="absolute text-lg font-bold text-white top-2 right-24"
-            onPress={() => setSelected((prev) => prev + 1)}
+            className="absolute text-lg font-bold hidden lg:block text-white lg:top-2 lg:right-20 xl:right-72"
+            onPress={handleNext}
           >
             Next
           </Button>
           <Tabs
             aria-label="Options"
             selectedKey={selected}
-            onSelectionChange={handleSelection}
+            onSelectionChange={setSelected}
             classNames={{
               base: "!overflow-hidden w-full h-full justify-center items-center",
               tabList: "!overflow-scroll font-Prata font-semibold",
@@ -86,10 +91,34 @@ export const Legacy_Products = () => {
             variant="underlined"
             color="primary"
             size={"lg"}
-            className="mb-5"
+            className=" lg:mb-5"
           >
             {legacyProducts.map((list, id) => (
               <Tab key={id} title={list.type}>
+                <div className="flex lg:hidden justify-center items-center gap-8 pb-10">
+                  <Button
+                    size="sm"
+                    radius="lg"
+                    isDisabled={selected <= 0 ? true : false}
+                    color="primary"
+                    className="text-lg font-bold text-white "
+                    onPress={handlePrev}
+                  >
+                    Prev
+                  </Button>
+                  <Button
+                    size="sm"
+                    radius="lg"
+                    isDisabled={
+                      legacyProducts.length - 1 <= selected ? true : false
+                    }
+                    color="primary"
+                    className=" text-lg font-bold text-white"
+                    onPress={handleNext}
+                  >
+                    Next
+                  </Button>
+                </div>
                 <div className="grid w-full h-full gap-5 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   {list.products.slice(0, count).map((item, idx) => (
                     <div
@@ -106,7 +135,7 @@ export const Legacy_Products = () => {
                         />
                       </div>
                       <div className="space-y-4 text-center">
-                        <h3 className="text-base font-medium font-Prata md:text-lg lg:text-2xl text-grey-150">
+                        <h3 className="text-base font-medium font-Prata md:text-lg lg:text-2xl text-grey-150 line-clamp-2">
                           {item.title}
                         </h3>
                         {/* <p className="text-sm font-light font-Plus_Jakarta_Sans md:text-lg lg:text-xl text-grey-150">
