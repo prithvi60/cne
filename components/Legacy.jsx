@@ -2,7 +2,12 @@
 import * as React from "react";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-
+const isIOS = () => {
+  return (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  );
+};
 const smoothScrollTo = (element, target, duration) => {
   const start = element.scrollLeft;
   const change = target - start;
@@ -53,8 +58,11 @@ const Legacy = (props) => {
         ref={scrollContainerRef}
       >
         <div ref={targetRef} className="flex w-[1200px] md:w-[150vw]">
-          <LegacyTree    {...props}/>
-          {/* <img src={LegacyTree} alt="svg image" /> */}
+          {isIOS() ? (
+            <img src={"/tree.svg"} alt="svg image" loading="lazy" />
+          ) : (
+            <LegacyTree {...props} />
+          )}
         </div>
       </div>
     </section>
