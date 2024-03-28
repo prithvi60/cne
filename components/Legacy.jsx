@@ -1,13 +1,8 @@
 "use client";
 import * as React from "react";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
-const isIOS = () => {
-  return (
-    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
-  );
-};
+import { useRef,useState,useEffect } from "react";
+
 const smoothScrollTo = (element, target, duration) => {
   const start = element.scrollLeft;
   const change = target - start;
@@ -29,6 +24,7 @@ const smoothScrollTo = (element, target, duration) => {
 const Legacy = (props) => {
   const targetRef = useRef(null);
   const isInView = useInView(targetRef, { amount: 0.3 });
+  const [isIOS, setIsIOS] = useState(false);
 
   const scrollContainerRef = React.useRef(null);
   React.useEffect(() => {
@@ -45,6 +41,16 @@ const Legacy = (props) => {
     }
   }, [isInView]);
 
+  useEffect(() => {
+    const checkIOS = () => {
+      return (
+        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+      );
+    };
+
+    setIsIOS(checkIOS());
+  }, []);
   return (
     <section
       className="relative w-full h-full mx-auto space-y-8 md:py-12 mt-36"
@@ -58,7 +64,7 @@ const Legacy = (props) => {
         ref={scrollContainerRef}
       >
         <div ref={targetRef} className="flex w-[1200px] md:w-[150vw]">
-          {isIOS() ? (
+          {isIOS ? (
             <img src={"/tree.svg"} alt="svg image" loading="lazy" />
           ) : (
             <LegacyTree {...props} />
