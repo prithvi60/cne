@@ -1,36 +1,74 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Tabs, Tab } from "@nextui-org/tabs";
 import { Button } from "@nextui-org/button";
 import { legacyProducts } from "@/libs/data";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const smoothScrollTo = (element, target, duration) => {
+  const start = element.scrollLeft;
+  const change = target - start;
+  let startTime = null;
+
+  const animateScroll = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+    const newPos = start + change * easeInOutQuad(progress);
+    element.scrollLeft = newPos;
+    if (progress < 1) {
+      window.requestAnimationFrame(animateScroll);
+    }
+  };
+
+  window.requestAnimationFrame(animateScroll);
+};
 
 export const Legacy_Products = () => {
-  const isWidth = typeof window !== "undefined" && window.innerWidth;
-  const [width, setWidth] = useState(isWidth);
-  const [count, setCount] = useState(3);
+  // const isWidth = typeof window !== "undefined" && window.innerWidth;
+  // const [width, setWidth] = useState(isWidth);
+  // const [count, setCount] = useState(3);
   const [selected, setSelected] = useState("All Genre");
+  const targetRef = useRef(null);
+  const isInView = useInView(targetRef, { amount: 0.3 });
+  const scrollContainerRef = useRef(null);
 
   useEffect(() => {
-    const onChange = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", onChange);
+    // scroll to end
+    if (isInView && scrollContainerRef.current) {
+      const scrollWidth = scrollContainerRef.current.scrollWidth;
+      const clientWidth = scrollContainerRef.current.clientWidth;
+      const targetScrollPosition = scrollWidth - clientWidth;
+      smoothScrollTo(scrollContainerRef.current, targetScrollPosition, 1200);
+    }
+    // scroll to start
+    else if (scrollContainerRef.current) {
+      smoothScrollTo(scrollContainerRef.current, 0, 1500);
+    }
+  }, [isInView]);
 
-    return () => {
-      window.removeEventListener("resize", onChange);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const onChange = () => {
+  //     setWidth(window.innerWidth);
+  //   };
+  //   window.addEventListener("resize", onChange);
 
-  useEffect(() => {
-    width >= 1024
-      ? setCount(8)
-      : width >= 768
-      ? setCount(6)
-      : width >= 375
-      ? setCount(4)
-      : setCount(4);
-  }, [width]);
+  //   return () => {
+  //     window.removeEventListener("resize", onChange);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   width >= 1024
+  //     ? setCount(8)
+  //     : width >= 768
+  //     ? setCount(6)
+  //     : width >= 375
+  //     ? setCount(4)
+  //     : setCount(4);
+  // }, [width]);
 
   const handleNext = () => {
     setSelected((prev) => String(Number(prev) + 1));
@@ -63,7 +101,7 @@ export const Legacy_Products = () => {
             radius="lg"
             isDisabled={selected <= 0 ? true : false}
             color="primary"
-            className="absolute text-lg hidden lg:block font-bold text-white lg:top-2  lg:left-20 xl:left-72"
+            className="absolute hidden text-lg font-bold text-white lg:block lg:top-2 lg:left-20 xl:left-72"
             onPress={handlePrev}
           >
             Prev
@@ -73,7 +111,7 @@ export const Legacy_Products = () => {
             radius="lg"
             isDisabled={legacyProducts.length - 1 <= selected ? true : false}
             color="primary"
-            className="absolute text-lg font-bold hidden lg:block text-white lg:top-2 lg:right-20 xl:right-72"
+            className="absolute hidden text-lg font-bold text-white lg:block lg:top-2 lg:right-20 xl:right-72"
             onPress={handleNext}
           >
             Next
@@ -85,17 +123,17 @@ export const Legacy_Products = () => {
             classNames={{
               base: "!overflow-hidden w-full h-full justify-center items-center",
               tabList: "!overflow-scroll font-Prata font-semibold",
-              tabContent: "group-data-[selected=true]:font-bold",
+              tabContent: "group-data-[selected=true]:font-bold capitalize",
               panel: "w-full",
             }}
             variant="underlined"
             color="primary"
             size={"lg"}
-            className=" lg:mb-5"
+            className="lg:mb-5"
           >
             {legacyProducts.map((list, id) => (
               <Tab key={id} title={list.type}>
-                <div className="flex lg:hidden justify-center items-center gap-8 pb-10">
+                <div className="flex items-center justify-center gap-8 pb-10 lg:hidden">
                   <Button
                     size="sm"
                     radius="lg"
@@ -113,32 +151,39 @@ export const Legacy_Products = () => {
                       legacyProducts.length - 1 <= selected ? true : false
                     }
                     color="primary"
-                    className=" text-lg font-bold text-white"
+                    className="text-lg font-bold text-white "
                     onPress={handleNext}
                   >
                     Next
                   </Button>
                 </div>
-                <div className="grid w-full h-full gap-5 bg-white sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {list.products.slice(0, count).map((item, idx) => (
-                    <div
-                      className="z-20 w-full h-full p-3 space-y-3 bg-white rounded-md shadow-xl sm:min-w-40 group md:p-5 md:min-w-48 lg:min-w-56 xl:min-w-80 md:space-y-5"
-                      key={idx}
-                    >
-                      <div className="relative overflow-hidden ">
-                        <img
-                          // fill
-                          loading="lazy"
-                          src={item.img}
-                          alt={item.alt}
-                          className="object-contain w-full h-48 transition-all ease-in-out transform md:p-5 group-hover:scale-105 md:h-60 lg:h-72"
-                        />
-                      </div>
-                      <div className="space-y-4 text-center">
-                        <h3 className="text-base font-medium font-Prata md:text-lg lg:text-2xl text-grey-150 line-clamp-2">
-                          {item.title}
-                        </h3>
-                        {/* <p className="text-sm font-light font-Plus_Jakarta_Sans md:text-lg lg:text-xl text-grey-150">
+                <div
+                  className="w-full h-full overflow-x-scroll lg:overflow-x-hidden"
+                  ref={scrollContainerRef}
+                >
+                  <motion.div
+                    className="grid w-full h-full grid-flow-col grid-rows-2 gap-3 px-0 py-4 bg-white md:gap-5 md:p-4 grid-col-3 md:grid-rows-3 xl:grid-cols-4"
+                    ref={targetRef}
+                  >
+                    {list.products.map((item, idx) => (
+                      <div
+                        className="z-20 h-full p-3 space-y-3 bg-white rounded-md shadow-xl min-w-36 group md:p-5 md:min-w-48 lg:min-w-56 xl:min-w-80 md:space-y-5"
+                        key={idx}
+                      >
+                        <div className="relative overflow-hidden ">
+                          <img
+                            // fill
+                            loading="lazy"
+                            src={item.img}
+                            alt={item.title}
+                            className="object-contain w-full h-48 transition-all ease-in-out transform md:p-5 group-hover:scale-105 md:h-60 lg:h-72"
+                          />
+                        </div>
+                        <div className="space-y-4 text-center">
+                          <h3 className="text-base font-medium capitalize font-Prata md:text-lg lg:text-2xl text-grey-150 line-clamp-2 lg:line-clamp-3">
+                            {item.title}
+                          </h3>
+                          {/* <p className="text-sm font-light font-Plus_Jakarta_Sans md:text-lg lg:text-xl text-grey-150">
                           {item.desc}
                         </p>
                         <Button
@@ -149,9 +194,10 @@ export const Legacy_Products = () => {
                         >
                           Buy Now
                         </Button> */}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </motion.div>
                 </div>
               </Tab>
             ))}

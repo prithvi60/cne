@@ -60,7 +60,7 @@ export const Ayurveda = () => {
             loading="lazy"
             src={"/Ayurveda bg 2.svg"}
             alt="svg image"
-            className="object-contain block absolute bottom-64 h-[4.5rem] w-[4.5rem] md:bottom-44 lg:top-[26rem] right-0 -z-10 md:w-24 md:h-24 lg:w-[8rem] lg:h-[8rem] xl:w-[11rem] xl:h-[11rem] xl:top-40 xl:right-2 2xl:top-[15rem] 2xl:right-10 animate-pulse"
+            className="object-contain block absolute bottom-64 h-[4.5rem] w-[4.5rem] md:bottom-44 lg:top-[26rem] right-0 -z-10 md:w-24 md:h-24 lg:w-[8rem] lg:h-[8rem] xl:w-[11rem] xl:h-[11rem] xl:top-40 xl:right-0 2xl:top-[15rem]animate-pulse"
           />
         {/* </div> */}
         {/* <div className="block absolute -bottom-24 md:-bottom-28 2xl:-bottom-24 left-0 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] xl:w-[18rem] xl:h-[18rem] animate-pulse -z-10"> */}
@@ -69,7 +69,7 @@ export const Ayurveda = () => {
             loading="lazy"
             src={"/Ayurveda bg 3.svg"}
             alt="svg image"
-            className="object-contain block absolute -bottom-24 md:-bottom-40 2xl:-bottom-24 left-0 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] xl:w-[18rem] xl:h-[18rem] animate-pulse -z-10"
+            className="object-contain block absolute -bottom-24 md:-bottom-24 2xl:-bottom-24 left-0 w-[10rem] h-[10rem] md:w-[12rem] md:h-[12rem] xl:w-[18rem] xl:h-[18rem] animate-pulse -z-10"
           />
         {/* </div> */}
       </div>

@@ -7,26 +7,26 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="flex items-center justify-center w-full h-full gap-12 mb-2 text-black md:hidden">
-        {/* <Link href={"#"}>
+      {/* <div className="flex items-center justify-center w-full h-full gap-12 mb-2 text-black md:hidden">
+        <Link href={"#"}>
           <FaFacebookF className="text-xl hover:animate-appearance-in" />
         </Link>
         <Link href={"#"} className="text-xl hover:animate-appearance-in">
           {" "}
           <FaInstagram />
-        </Link> */}
+        </Link>
         <Link href={"#"} className="text-xl hover:animate-appearance-in">
           <FaLinkedinIn />
         </Link>
-        {/* <Link href={"#"} className="text-xl hover:animate-appearance-in">
+        <Link href={"#"} className="text-xl hover:animate-appearance-in">
           <FaXTwitter />
-        </Link> */}
-      </div>
+        </Link>
+      </div> */}
       <section className="w-full h-full bg-primary">
         <div className="py-5 px-12 max-w-[1440px] h-full mx-auto">
-          <div className="flex flex-row items-center justify-center md:justify-between ">
+          <div className="flex flex-col-reverse items-center justify-center gap-5 md:flex-row md:justify-between md:gap-0">
             <p className="mt-2 text-xs font-medium tracking-wider text-center text-white uppercase md:text-left font-Plus_Jakarta_Sans">{`© ${currentYear}  Chinni Nambi Enterprises. All rights reserved.`}</p>
-            <div className="items-center hidden gap-8 text-white md:flex">
+            <div className="flex items-center gap-8 text-white">
               {/* <Link href={"#"}>
                 <FaFacebookF className="text-lg hover:animate-appearance-in" />
               </Link>
