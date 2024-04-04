@@ -9,13 +9,13 @@ export const NavLink = [
 
 export const brands = [
   {
-    img: "/NIVARAN Logo.png",
+    img: "https://ik.imagekit.io/webibee/CNE/logos/1990%20%20-NIVARAN%2090%20OLD%20.png",
     alt: "NIVARAN Logo",
     ref: "https://nivaran90.com",
   },
-  { img: "/Velvette logo.png", alt: "Velvette Logo", ref: "/" },
+  { img: "https://ik.imagekit.io/webibee/CNE/logos/1979%20%20VELVETTE.png", alt: "Velvette Logo", ref: "/" },
   {
-    img: "/MEMORY PLUS LOGO.png",
+    img: "https://ik.imagekit.io/webibee/CNE/logos/1996%20-%20MEMORY%20PLUS%201996.png",
     alt: "MEMORY PLUS LOGO",
     ref: "https://memoryplus.in/",
   },
@@ -106,7 +106,7 @@ export const legacyProducts = [
     type: "Nivaran 90",
     products: [
       {
-        img: "https://ik.imagekit.io/webibee/CNE/Nivaran%2090/19.%20%20NIVARAN%2090%20PAIN%20BALM%202.png",
+        img: "https://ik.imagekit.io/webibee/CNE/Nivaran%2090/19.%20%20NIVARAN%2090%20PAIN%20BALM%202-modified.jpeg",
         title: "Nivaran pain balm",
         desc: "lorem ipsum text",
       },

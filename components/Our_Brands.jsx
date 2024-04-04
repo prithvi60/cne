@@ -30,7 +30,7 @@ export const Our_Brands = () => {
           {brands.map((list, index) => (
             <Link
             href={list.ref}
-              className="relative z-20 overflow-hidden transition-all ease-linear transform bg-white rounded-md shadow-xl hover:shadow-primary"
+              className="relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary grayscale hover:filter-none"
               key={index}
               target="_blank"
             >
