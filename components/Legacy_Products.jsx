@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef, useCallback } from "react";
 import { Tabs, Tab } from "@nextui-org/tabs";
 import { Button } from "@nextui-org/button";
 import { legacyProducts } from "@/libs/data";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, } from "framer-motion";
 
 const smoothScrollTo = (element, target, duration) => {
   const start = element.scrollLeft;
@@ -27,49 +26,27 @@ const smoothScrollTo = (element, target, duration) => {
 };
 
 export const Legacy_Products = () => {
-  // const isWidth = typeof window !== "undefined" && window.innerWidth;
-  // const [width, setWidth] = useState(isWidth);
-  // const [count, setCount] = useState(3);
+
   const [selected, setSelected] = useState("All Genre");
   const targetRef = useRef(null);
-  const isInView = useInView(targetRef, { amount: 0.3 });
-  const scrollContainerRef = useRef(null);
 
-  useEffect(() => {
-    // scroll to end
-    if (isInView && scrollContainerRef.current) {
-      const scrollWidth = scrollContainerRef.current.scrollWidth;
-      const clientWidth = scrollContainerRef.current.clientWidth;
-      const targetScrollPosition = scrollWidth - clientWidth;
-      smoothScrollTo(scrollContainerRef.current, targetScrollPosition, 1200);
+// Scroll end change tab
+  const scrollContainerRef = useCallback((node) => {
+    if (node !== null) {
+      const handleScroll = () => {
+        const isAtEnd = node.scrollWidth - node.scrollLeft === node.clientWidth;
+        if (isAtEnd) {
+          handleNext()
+        }
+      };
+      node.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        node.removeEventListener('scroll', handleScroll);
+      };
     }
-    // scroll to start
-    else if (scrollContainerRef.current) {
-      smoothScrollTo(scrollContainerRef.current, 0, 1500);
-    }
-  }, [isInView]);
-
-  // useEffect(() => {
-  //   const onChange = () => {
-  //     setWidth(window.innerWidth);
-  //   };
-  //   window.addEventListener("resize", onChange);
-
-  //   return () => {
-  //     window.removeEventListener("resize", onChange);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   width >= 1024
-  //     ? setCount(8)
-  //     : width >= 768
-  //     ? setCount(6)
-  //     : width >= 375
-  //     ? setCount(4)
-  //     : setCount(4);
-  // }, [width]);
-
+  }, []);
+  
   const handleNext = () => {
     setSelected((prev) => String(Number(prev) + 1));
   };
@@ -77,6 +54,7 @@ export const Legacy_Products = () => {
   const handlePrev = () => {
     setSelected((prev) => String(Number(prev) - 1));
   };
+
 
   return (
     <section className="relative w-full h-full my-10">
@@ -96,7 +74,8 @@ export const Legacy_Products = () => {
           </div>
         </div>
         <div className="relative z-20 flex flex-col items-center justify-center">
-          <Button
+          {/* Desktop btn */}
+          {/* <Button
             size="sm"
             radius="lg"
             isDisabled={selected <= 0 ? true : false}
@@ -115,11 +94,12 @@ export const Legacy_Products = () => {
             onPress={handleNext}
           >
             Next
-          </Button>
+          </Button> */}
           <Tabs
             aria-label="Options"
             selectedKey={selected}
             onSelectionChange={setSelected}
+            onScroll={(t)=>console.log("test",t)}
             classNames={{
               base: "!overflow-hidden w-full h-full justify-center items-center",
               tabList: "!overflow-scroll font-Prata font-semibold",
@@ -134,7 +114,7 @@ export const Legacy_Products = () => {
             {legacyProducts.map((list, id) => (
               <Tab key={id} title={list.type}>
                 <div className="flex items-center justify-center gap-8 pb-10 lg:hidden">
-                  <Button
+                  {/* <Button
                     size="sm"
                     radius="lg"
                     isDisabled={selected <= 0 ? true : false}
@@ -155,10 +135,10 @@ export const Legacy_Products = () => {
                     onPress={handleNext}
                   >
                     Next
-                  </Button>
+                  </Button> */}
                 </div>
                 <div
-                  className="w-full h-full overflow-x-scroll lg:overflow-x-hidden"
+                  className="w-full h-full overflow-x-scroll lg:overflow-x-hidden "
                   ref={scrollContainerRef}
                 >
                   <motion.div
