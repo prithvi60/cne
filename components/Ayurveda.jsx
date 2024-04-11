@@ -1,11 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
+"use client"
 import { benefits } from "@/libs/data";
-import React from "react";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
-export const Ayurveda = () => {
+export const Ayurveda = ({handleIntersection}) => {
+  const { ref, inView } = useInView({ threshold: 0.5 });
+
+  useEffect(() => {
+    handleIntersection("Ayurveda", inView);
+  }, [inView, handleIntersection]);
+
   return (
     <section className="relative w-full h-full">
-      <div className="space-y-8 wrapper md:space-y-12" id={"Ayurveda"}>
+      <div className="space-y-8 wrapper md:space-y-12" id={"Ayurveda"} ref={ref}>
         <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">
           Ayurveda
         </h1>

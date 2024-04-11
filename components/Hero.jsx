@@ -1,11 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 
-export const Hero = () => {
+export const Hero = ({ handleIntersection }) => {
+  const { ref, inView } = useInView({ threshold: 0.5 });
+
+  useEffect(() => {
+    handleIntersection("Home", inView);
+  }, [inView, handleIntersection]);
+
   return (
-    <section className="w-full h-full" id="Home">
+    <section className="w-full h-full" id="Home" ref={ref}>
       <ParallaxBanner className="h-[800px] lg:h-[950px] xl:h-[1200px] 2xl:h-[1500px] w-auto">
         <ParallaxBannerLayer className="w-full h-auto" speed={-20}>
           {/* <div className="block absolute top-48 md:top-52 lg:top-36 w-full h-[640px] lg:h-[850px] xl:h-[1200px] "> */}
@@ -13,7 +20,7 @@ export const Hero = () => {
             src={"/parallexlayer.png"}
             alt="image"
             loading="eager"
-            className="object-cover md:object-center block absolute top-48 md:top-52 lg:top-36 w-full h-[640px] lg:h-[850px] xl:h-[1200px]"
+            className="object-cover md:object-center block absolute top-40 md:top-52 lg:top-36 w-full h-[640px] lg:h-[850px] xl:h-[1200px]"
           />
           {/* </div> */}
         </ParallaxBannerLayer>

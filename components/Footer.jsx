@@ -34,7 +34,13 @@ const Footer = () => {
                 {" "}
                 <FaInstagram />
               </Link> */}
-              <Link href={"#"} className="text-lg hover:animate-appearance-in">
+              <Link
+              target="_blank"
+                href={
+                  "https://www.linkedin.com/company/96364974/admin/feed/posts/"
+                }
+                className="text-lg hover:animate-appearance-in"
+              >
                 <FaLinkedinIn />
               </Link>
               {/* <Link href={"#"} className="text-lg hover:animate-appearance-in">

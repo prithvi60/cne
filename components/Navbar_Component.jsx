@@ -13,13 +13,13 @@ import {
 import { Link } from "react-scroll";
 import { NavLink } from "@/libs/data";
 
-const Navbar_Component = () => {
+const Navbar_Component = ({ activeSection, setActiveSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("Home");
-
+  // const [activeItem, setActiveSection] = useState("Home");
+  // console.log(activeSection);
   const handleMenuBar = (item) => {
     setIsMenuOpen(false);
-    setActiveItem(item);
+    setActiveSection(item);
   };
   return (
     <Navbar
@@ -28,7 +28,7 @@ const Navbar_Component = () => {
       classNames={{
         base: "w-full mb-4 pb-4 z-50",
         wrapper:
-          "flex flex-row justify-between items-center md:flex-col md:gap-1.5 !h-auto ",
+          "md:flex grid grid-cols-2 md:justify-between md:items-center md:flex-col md:gap-1.5 !h-auto ",
         item: [
           "flex",
           "relative",
@@ -74,12 +74,13 @@ const Navbar_Component = () => {
               priority
             />
           </div> */}
-           <img
-           loading="eager"
-              src={"/logo.svg"}
-              alt="Logo"
-              className="mt-3.5 md:mt-0 hover:animate-appearance-in cursor-pointer w-20 h-20 md:w-28 md:h-28"
-            />
+          <img
+            loading="eager"
+            src={"/logo.svg"}
+            alt="Logo"
+            className="mt-3.5 md:mt-0 hover:animate-appearance-in cursor-pointer w-20 h-20 md:w-28 md:h-28"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          />
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent
@@ -89,8 +90,10 @@ const Navbar_Component = () => {
         {NavLink.map((i, idx) => (
           <NavbarItem
             key={idx}
-            className={"text-lg xl:text-[23px] hover:animate-appearance-in"}
-            isActive={activeItem === i}
+            className={`text-lg xl:text-[23px] hover:animate-appearance-in ${
+              activeSection === i ? "text-primary" : "text-black"
+            }`}
+            isActive={activeSection === i}
           >
             <Link
               to={`${i}`}
@@ -100,7 +103,7 @@ const Navbar_Component = () => {
               offset={-200}
               smooth={true}
               duration={1000}
-              onClick={() => setActiveItem(i)}
+              onClick={() => setActiveSection(i)}
             >
               {i}
             </Link>
@@ -113,12 +116,41 @@ const Navbar_Component = () => {
           className="p-4 md:hidden"
         />
       </NavbarContent>
-      <NavbarMenu className="mt-10 text-center bg-white bg-opacity-85">
+      <NavbarContent
+        className="flex col-span-2 gap-2.5 sm:gap-5 md:hidden font-Prata"
+        justify="center"
+      >
+        {NavLink.slice(1).map((i, idx) => (
+          <NavbarItem
+            key={idx}
+            className={`text-sm sm:text-base hover:animate-appearance-in ${
+              activeSection === i ? "text-primary" : "text-black"
+            }`}
+            isActive={activeSection === i}
+          >
+            <Link
+              to={`${i}`}
+              href={`${i}`}
+              title={i}
+              spy={true}
+              offset={-200}
+              smooth={true}
+              duration={1000}
+              onClick={() => setActiveSection(i)}
+            >
+              {i}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+      <NavbarMenu className="mt-10 text-center bg-white bg-opacity-85 z-[1000]">
         {NavLink.map((item, index) => (
           <NavbarMenuItem
             key={index}
-            className="h-16 text-lg font-semibold font-Plus_Jakarta_Sans hover:animate-appearance-in"
-            isActive={activeItem === item}
+            className={`h-16 text-lg font-semibold font-Plus_Jakarta_Sans hover:animate-appearance-in ${
+              activeSection === item ? "text-primary" : "text-black"
+            }`}
+            isActive={activeSection === item}
           >
             <Link
               to={item}

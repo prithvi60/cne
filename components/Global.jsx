@@ -1,13 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
+"use client";
 import { Button } from "@nextui-org/button";
-import React from "react";
+import { useInView } from "react-intersection-observer";
+import React, { useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
 
-export const Global = () => {
+export const Global = ({ handleIntersection }) => {
+
+  const { ref, inView, entry } = useInView({ threshold: 0.5 });
+
+  useEffect(() => {
+    handleIntersection("Global", inView);
+  }, [inView, handleIntersection]);
+  // console.log(entry.target.id);
+
   return (
     <section className="relative w-full h-full">
-      <div className="wrapper my-36" id={"Global"}>
+      <div className="wrapper my-36" id={"Global"} ref={ref}>
         <div className="z-20 flex flex-col items-start gap-5 mb-6 bg-white md:flex-row md:items-start">
           <div className="w-full md:w-1/2">
             {/* <div className="relative z-10 overflow-hidden group">

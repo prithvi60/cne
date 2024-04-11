@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { brands } from "@/libs/data";
+import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import React from "react";
+import { useEffect } from "react";
 // import { motion } from "framer-motion";
 
-export const Our_Brands = () => {
+export const Our_Brands = ({ handleIntersection }) => {
+  const { ref, inView } = useInView({ threshold: 0.8 });
+
+  useEffect(() => {
+    handleIntersection("Brands", inView);
+  }, [inView, handleIntersection]);
+
   // const variants = {
   //   initial: {
   //     opacity: 0,
@@ -22,6 +30,7 @@ export const Our_Brands = () => {
         // whileInView="animate"
         // transition={{ duration: 1, delay: 0.25 }}
         className="space-y-16 wrapper"
+        ref={ref}
       >
         <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">
           Our Brands
@@ -29,8 +38,8 @@ export const Our_Brands = () => {
         <div className="z-auto flex flex-col items-center justify-center gap-5 sm:gap-2 sm:flex-row sm:justify-around sm:flex-wrap">
           {brands.map((list, index) => (
             <Link
-            href={list.ref}
-              className="relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary grayscale hover:filter-none"
+              href={list.ref}
+              className={`relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary md:grayscale filter-none md:hover:filter-none`}
               key={index}
               target="_blank"
             >
@@ -57,23 +66,23 @@ export const Our_Brands = () => {
           className="absolute top-24 md:left-[14rem]
         lg:left-[28rem] 2xl:left-[42rem] z-0 left-40 h-12 w-12 md:w-[8rem] md:h-[8rem] animate-pulse"
         > */}
-          <img
-            // fill
-            loading="lazy"
-            src={"/brand bg 3.svg"}
-            alt="svg image"
-            className="object-contain absolute top-24 md:left-[14rem]
+        <img
+          // fill
+          loading="lazy"
+          src={"/brand bg 3.svg"}
+          alt="svg image"
+          className="object-contain absolute top-24 md:left-[14rem]
             lg:left-[28rem] 2xl:left-[42rem] z-0 left-40 h-12 w-12 md:w-[8rem] md:h-[8rem] animate-pulse"
-          />
+        />
         {/* </div> */}
         {/* <div className="absolute hidden w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48 animate-pulse"> */}
-          <img
-            // fill
-            loading="lazy"
-            src={"/brand bg 5.svg"}
-            alt="svg image"
-            className="absolute hidden object-contain w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48 animate-pulse"
-          />
+        <img
+          // fill
+          loading="lazy"
+          src={"/brand bg 5.svg"}
+          alt="svg image"
+          className="absolute hidden object-contain w-32 h-32 lg:block -bottom-10 right-10 2xl:right-48 animate-pulse"
+        />
         {/* </div> */}
       </div>
     </section>
