@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { Button } from "@nextui-org/button";
+import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import React, { useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
@@ -60,13 +61,23 @@ export const Global = ({ handleIntersection }) => {
                 customers with the best possible products and services, wherever
                 they are in the world.
               </p>
-              <Button
-                variant="shadow"
-                color="primary"
-                className="px-8 py-6 text-xl tracking-wide text-white capitalize rounded-none font-Prata"
+              <Link
+        
+                target="_blank"
+                href={
+                 " https://forms.gle/6vdFimH1fekqeudY7"
+                }
               >
+                <Button
+                        variant="shadow"
+                        color="primary"
+                        className="px-8 py-6 text-xl tracking-wide text-white capitalize rounded-none font-Prata"
+                >
+
+
                 Open To Overseas Distribution Partners
-              </Button>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

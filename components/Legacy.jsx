@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-
+import Image from "next/image"
 const smoothScrollTo = (element, target, duration) => {
   const start = element.scrollLeft;
   const change = target - start;
@@ -66,11 +66,14 @@ const Legacy = ({ ref }) => {
         ref={scrollContainerRef}
       >
         <div ref={targetRef} className="flex w-[1200px] md:w-[150vw]">
-          {isIOS ? (
-            <img src={"/tree.svg"} alt="svg image" loading="lazy" />
+
+        <img src={"/tree.svg"} alt="svg image" loading="lazy"/>
+
+          {/* {isIOS ? (
+            <img src={"/tree.svg"} alt="svg image" loading="lazy" height={"100px"} />
           ) : (
             <LegacyTree />
-          )}
+          )} */}
         </div>
       </div>
     </section>
@@ -79,6 +82,9 @@ const Legacy = ({ ref }) => {
 export default Legacy;
 
 export const LegacyTree = () => (
+
+
+
   <svg
     viewBox="0 0 1920 824"
     fill="none"
