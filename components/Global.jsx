@@ -71,7 +71,7 @@ export const Global = ({ handleIntersection }) => {
                 <Button
                         variant="shadow"
                         color="primary"
-                        className="px-8 py-6 text-xl tracking-wide text-white capitalize rounded-none font-Prata"
+                        className="mt-8 px-8 py-6 text-xl tracking-wide text-white capitalize rounded-none font-Prata"
                 >
 
 
