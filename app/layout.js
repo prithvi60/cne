@@ -19,6 +19,9 @@ const plus_Jakarta_Sans = Plus_Jakarta_Sans({
 export const metadata = {
   title: "Chinni Nambi Enterprises: Ayurveda for your family",
   description: "Chinni Nambi Enterprises: Ayurveda for your family",
+  icons: {
+    icon: '/favicon.png', // /public path
+  },
 };
 
 export default function RootLayout({ children }) {

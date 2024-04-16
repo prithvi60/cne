@@ -50,3 +50,7 @@
   border-radius: 10px;
 
 }
+.custom{
+
+  box-sizing: content-box; 
+}

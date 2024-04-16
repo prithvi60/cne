@@ -12,7 +12,7 @@ const LegacyComponent = ({ handleIntersection }) => {
 
   return (
     <div id="Legacy" ref={ref}>
-      <Legacy ref={ref} />
+      <Legacy />
     </div>
   );
 };
