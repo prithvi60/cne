@@ -3,15 +3,10 @@
 import { brands } from "@/libs/data";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import { useEffect } from "react";
 // import { motion } from "framer-motion";
 
-export const Our_Brands = ({ handleIntersection }) => {
+export const Our_Brands = ({}) => {
   const { ref, inView } = useInView({ threshold: 0.8 });
-
-  useEffect(() => {
-    handleIntersection("Brands", inView);
-  }, [inView, handleIntersection]);
 
   // const variants = {
   //   initial: {
@@ -35,13 +30,34 @@ export const Our_Brands = ({ handleIntersection }) => {
         <h1 className="text-2xl md:text-[45px] lg:text-[54px] text-primary font-Prata text-center capitalize">
           Our Brands
         </h1>
-        <div className="z-auto flex flex-col items-center justify-center gap-5 sm:gap-2 sm:flex-row sm:justify-around sm:flex-wrap">
+        <div className="hidden md:flex z-auto  flex-col items-center justify-center gap-5 sm:gap-2 sm:flex-row sm:justify-around sm:flex-wrap">
           {brands.map((list, index) => (
             <Link
               href={list.ref}
-              className={`relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary md:grayscale filter-none md:hover:filter-none`}
+              className={`relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary md:grayscale filter-none md:hover:filter-none `}
               key={index}
               target="_blank"
+            >
+              <img
+                // fill
+                loading="lazy"
+                src={list.img}
+                alt={list.alt}
+                className="object-contain p-6 transition-all ease-linear transform cursor-pointer md:p-4 lg:p-10 hover:scale-105 w-[320px] h-44 md:h-44 md:w-52 lg:h-[250px] lg:w-[350px] xl:w-[425px]"
+              />
+            </Link>
+          ))}
+        </div>
+        <div className="md:hidden">
+          {brands.map((list, index) => (
+            <Link
+              href={list.ref}
+              className={`relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary md:grayscale filter-none md:hover:filter-none `}
+              key={index}
+              target="_blank"
+              style={{
+                filter: inView ? "none" : "grayscale(100%)",
+              }}
             >
               <img
                 // fill

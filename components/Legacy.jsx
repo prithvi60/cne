@@ -60,7 +60,7 @@ const Legacy = () => {
       </h1>
       <div className="overflow-x-scroll lg:overflow-x-hidden lg:hover:overflow-x-scroll custom" ref={scrollContainerRef}>
         <div ref={targetRef} className="flex">
-          <img src={"/tree.png"} alt="legacy-image" loading="lazy" className="max-w-[300%] md:max-w-[250%]" />
+          <img src={"/tree.png"} alt="legacy-image" loading="lazy" className="max-w-[600%] md:max-w-[250%]" />
         </div>
       </div>
     </section>

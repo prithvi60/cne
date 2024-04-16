@@ -7,7 +7,6 @@ import React, { useEffect } from "react";
 import ReactPlayer from "react-player/lazy";
 
 export const Global = ({ handleIntersection }) => {
-
   const { ref, inView, entry } = useInView({ threshold: 0.5 });
 
   useEffect(() => {
@@ -55,46 +54,44 @@ export const Global = ({ handleIntersection }) => {
               high-quality products and excellent service.
             </p>
             <div className="z-20 hidden space-y-7 lg:block">
-              <p className="text-base md:text-lg lg:text-xl !leading-[2rem]">
+              <p className="text-base md:text-lg lg:text-xl !leading-[2rem] ">
                 We are confident that our global presence will continue to grow
                 in the years to come. We are committed to providing our
                 customers with the best possible products and services, wherever
                 they are in the world.
               </p>
               <Link
-        
                 target="_blank"
-                href={
-                 " https://forms.gle/6vdFimH1fekqeudY7"
-                }
+                href={" https://forms.gle/6vdFimH1fekqeudY7"}
+                className=""
               >
                 <Button
-                        variant="shadow"
-                        color="primary"
-                        className="mt-8 px-8 py-6 text-xl tracking-wide text-white capitalize rounded-none font-Prata"
+                  variant="shadow"
+                  color="primary"
+                  className="mt-8 px-8  text-xl tracking-wide text-white capitalize rounded-none font-Prata"
                 >
-
-
-                Open To Overseas Distribution Partners
+                  Open To Overseas Distribution Partners
                 </Button>
               </Link>
             </div>
           </div>
         </div>
         <div className="z-20 block bg-white space-y-7 lg:hidden">
-          <p className="text-base md:text-lg lg:text-xl font-Plus_Jakarta_Sans">
+          <p className="text-base md:text-lg lg:text-xl font-Plus_Jakarta_Sans pb-8">
             We are confident that our global presence will continue to grow in
             the years to come. We are committed to providing our customers with
             the best possible products and services, wherever they are in the
             world.
           </p>
-          <Button
-            variant="shadow"
-            color="primary"
-            className="w-full px-5 py-4 text-xs tracking-wide text-white capitalize rounded-none md:py-7 md:w-max sm:text-sm font-Prata md:text-xl"
-          >
-            Open To Overseas Distribution Partners
-          </Button>
+          <Link target="_blank" href={" https://forms.gle/6vdFimH1fekqeudY7"}>
+            <Button
+              variant="shadow"
+              color="primary"
+              className="w-full px-5 py-4 text-xs tracking-wide text-white capitalize rounded-none md:py-7 md:w-max sm:text-sm font-Prata md:text-xl"
+            >
+              Open To Overseas Distribution Partners
+            </Button>
+          </Link>
         </div>
         <div
           className="hidden lg:block absolute lg:top-60
