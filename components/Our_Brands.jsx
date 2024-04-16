@@ -3,11 +3,14 @@
 import { brands } from "@/libs/data";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
+import { useEffect } from "react";
 // import { motion } from "framer-motion";
 
-export const Our_Brands = ({}) => {
-  const { ref, inView } = useInView({ threshold: 0.8 });
-
+export const Our_Brands = ({handleIntersection }) => {
+  const { ref, inView } = useInView({ threshold: 0.6 });
+  useEffect(() => {
+    handleIntersection("Brands", inView);
+  }, [inView, handleIntersection]);
   // const variants = {
   //   initial: {
   //     opacity: 0,
@@ -52,7 +55,7 @@ export const Our_Brands = ({}) => {
           {brands.map((list, index) => (
             <Link
               href={list.ref}
-              className={`relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary md:grayscale filter-none md:hover:filter-none `}
+              className={`justify-center flex my-4 relative z-20 overflow-hidden transition-all ease-linear bg-white rounded-md shadow-xl hover:shadow-primary md:grayscale filter-none md:hover:filter-none `}
               key={index}
               target="_blank"
               style={{
