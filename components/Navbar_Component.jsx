@@ -17,10 +17,10 @@ const Navbar_Component = ({ activeSection, setActiveSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [activeItem, setActiveSection] = useState("Home");
   // console.log(activeSection);
-  const handleMenuBar = (item) => {
-    setIsMenuOpen(false);
-    setActiveSection(item);
-  };
+  // const handleMenuBar = (item) => {
+  //   setIsMenuOpen(false);
+  //   setActiveSection(item);
+  // };
   return (
     <Navbar
       isMenuOpen={isMenuOpen}
@@ -28,7 +28,7 @@ const Navbar_Component = ({ activeSection, setActiveSection }) => {
       classNames={{
         base: "w-full mb-4 pb-4 z-50",
         wrapper:
-          "md:flex grid grid-cols-2 md:justify-between md:items-center md:flex-col md:gap-1.5 !h-auto ",
+          "flex justify-between items-center flex-col gap-1.5 !h-auto ",
         item: [
           "flex",
           "relative",
@@ -110,12 +110,6 @@ const Navbar_Component = ({ activeSection, setActiveSection }) => {
           </NavbarItem>
         ))}
       </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="p-4 md:hidden"
-        />
-      </NavbarContent>
       <NavbarContent
         className="flex col-span-2 gap-2.5 sm:gap-5 md:hidden font-Prata"
         justify="center"
@@ -143,7 +137,13 @@ const Navbar_Component = ({ activeSection, setActiveSection }) => {
           </NavbarItem>
         ))}
       </NavbarContent>
-      <NavbarMenu className="mt-10 text-center bg-white bg-opacity-85 z-[1000]">
+            {/* <NavbarContent justify="end">
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="p-4 md:hidden"
+        />
+      </NavbarContent> */}
+      {/* <NavbarMenu className="mt-10 text-center bg-white bg-opacity-85 z-[1000]">
         {NavLink.map((item, index) => (
           <NavbarMenuItem
             key={index}
@@ -168,7 +168,7 @@ const Navbar_Component = ({ activeSection, setActiveSection }) => {
             </Link>
           </NavbarMenuItem>
         ))}
-      </NavbarMenu>
+      </NavbarMenu> */}
     </Navbar>
   );
 };

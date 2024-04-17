@@ -138,16 +138,16 @@ export const Legacy_Products = () => {
                   </Button> */}
                 </div>
                 <div
-                  className="w-full h-full overflow-x-scroll lg:overflow-x-hidden "
+                  className="w-full h-full overflow-x-scroll custom"
                   ref={scrollContainerRef}
                 >
                   <motion.div
-                    className="grid w-full h-full grid-flow-col grid-rows-2 gap-3 px-0 py-4 bg-white md:gap-5 md:p-4 grid-col-3 md:grid-rows-3 xl:grid-cols-4"
+                    className="grid w-full h-full grid-flow-col grid-rows-2 gap-3 px-0 py-4 bg-white md:gap-3 md:p-4 grid-col-3 md:grid-rows-3"
                     ref={targetRef}
                   >
                     {list.products.map((item, idx) => (
                       <div
-                        className="z-20 h-full p-3 space-y-3 bg-white rounded-md shadow-xl min-w-36 group md:p-5 md:min-w-48 lg:min-w-56 xl:min-w-80 md:space-y-5"
+                        className="z-20 h-full p-3 space-y-3 bg-white rounded-md shadow-xl min-w-36 group md:p-5 md:min-w-48 lg:min-w-64 xl:min-w-[22rem] md:space-y-5"
                         key={idx}
                       >
                         <div className="relative overflow-hidden ">
