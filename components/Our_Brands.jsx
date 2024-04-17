@@ -7,7 +7,7 @@ import { useEffect } from "react";
 // import { motion } from "framer-motion";
 
 export const Our_Brands = ({handleIntersection }) => {
-  const { ref, inView } = useInView({ threshold: 0.6 });
+  const { ref, inView } = useInView({ threshold: 0.8 });
   useEffect(() => {
     handleIntersection("Brands", inView);
   }, [inView, handleIntersection]);
