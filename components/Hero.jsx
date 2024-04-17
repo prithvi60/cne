@@ -48,7 +48,7 @@ export const Hero = ({ handleIntersection }) => {
             // fill
             alt="image"
             loading="lazy"
-            className="object-contain scale-125 block md:hidden absolute top-10 -left-5 md:left-0 w-full h-[650px]"
+            className="object-contain block md:hidden absolute top-10 -left-5 md:left-0 w-full h-[650px]"
           />
           {/* </div> */}
         </ParallaxBannerLayer>
