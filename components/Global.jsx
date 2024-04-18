@@ -83,7 +83,7 @@ export const Global = ({ handleIntersection }) => {
             the best possible products and services, wherever they are in the
             world.
           </p>
-          <Link target="_blank" href={" https://forms.gle/6vdFimH1fekqeudY7"}>
+          <Link target="_blank" href={"https://forms.gle/64STYFdhXtQG7n367"}>
             <Button
               variant="shadow"
               color="primary"
