@@ -62,7 +62,7 @@ export const Global = ({ handleIntersection }) => {
               </p>
               <Link
                 target="_blank"
-                href={" https://forms.gle/6vdFimH1fekqeudY7"}
+                href={"https://forms.gle/64STYFdhXtQG7n367"}
                 className=""
               >
                 <Button

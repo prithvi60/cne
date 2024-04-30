@@ -76,9 +76,9 @@ const Navbar_Component = ({ activeSection, setActiveSection }) => {
           </div> */}
           <img
             loading="eager"
-            src={"/logo.svg"}
+            src={"/cne.svg"}
             alt="Logo"
-            className="mt-3.5 md:mt-0 hover:animate-appearance-in cursor-pointer w-20 h-20 md:w-28 md:h-28"
+            className="my-3.5 md:my-2 hover:animate-appearance-in cursor-pointer w-20 h-20 md:w-24 md:h-24"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           />
         </NavbarBrand>

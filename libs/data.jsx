@@ -9,7 +9,7 @@ export const NavLink = [
 
 export const brands = [
   {
-    img: "https://ik.imagekit.io/webibee/CNE/logos/1990%20%20-NIVARAN%2090%20OLD%20.png",
+    img: "https://ik.imagekit.io/webibee/CNE/logos/2023%20%20-NIVARAN%2090%20%20NEW.png",
     alt: "NIVARAN Logo",
     ref: "https://nivaran90.com",
   },
